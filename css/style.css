@@ -159,7 +159,7 @@ section{padding-block:clamp(56px,8vw,104px)}
 
 /* avatars strip */
 .faces{display:flex;margin-top:22px}
-.faces img{width:46px;height:46px;border-radius:50%;border:3px solid var(--surface);margin-left:-10px;background:var(--board)}
+.faces img{width:52px;height:52px;border-radius:50%;margin-left:-8px;filter:drop-shadow(0 2px 4px rgba(18,22,20,.18))}
 .faces img:first-child{margin-left:0}
 
 /* ---------- data / reliability ---------- */
