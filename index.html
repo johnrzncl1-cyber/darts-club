@@ -493,16 +493,18 @@
     <p class="sec-intro">Расскажите о вашем клубе или секции — ответим и пришлём программу.</p>
     <div class="contact">
       <form class="form" id="lead" novalidate>
-        <label>Ваше имя<input name="name" autocomplete="name" required></label>
+        <label><span>Ваше имя <span class="req" aria-hidden="true">*</span></span><input name="name" autocomplete="name" required></label>
         <label>Клуб или секция<input name="club" autocomplete="organization"></label>
-        <label>Телефон или e-mail<input name="contact" autocomplete="email" required></label>
-        <label>Игроков в клубе
+        <label><span>Электронная почта <span class="req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" inputmode="email" required></label>
+        <label>Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7"></label>
+        <label class="full">Игроков в клубе
           <select name="size"><option value="">— выберите —</option><option>до 15</option><option>15–40</option><option>40–100</option><option>больше 100</option></select>
         </label>
         <label class="full">Что интересует
           <select name="plan" id="plan"><option>Демо-версия</option><option>Лицензия</option><option>Подключение под ключ</option><option>Просто вопрос</option></select>
         </label>
         <label class="full">Комментарий<textarea name="msg" placeholder="Например: сколько тренеров, есть ли телевизор в зале, ведёте ли статистику сейчас"></textarea></label>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label class="full agree"><input type="checkbox" name="agree" required>Согласен на обработку персональных данных для ответа на заявку</label>
         <div class="full"><button class="btn primary lg" type="submit">Отправить заявку</button></div>
         <div class="form-msg" id="lead-msg" role="status" aria-live="polite"></div>
@@ -510,7 +512,7 @@
       <div class="cards">
         <!-- КОНТАКТЫ: замените заглушки на свои данные -->
         <a class="cline" href="tel:+70000000000"><svg class="ic"><use href="#i-call"/></svg><span><small>Телефон</small><b>+7 (000) 000-00-00</b></span></a>
-        <a class="cline" href="mailto:info@example.com"><svg class="ic"><use href="#i-mail"/></svg><span><small>Почта</small><b>info@example.com</b></span></a>
+        <a class="cline" href="mailto:darts-center@yandex.ru"><svg class="ic"><use href="#i-mail"/></svg><span><small>Почта</small><b>darts-center@yandex.ru</b></span></a>
         <a class="cline" href="https://t.me/username" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg><span><small>Telegram</small><b>@username</b></span></a>
         <a class="cline" href="https://vk.com/club" rel="noopener"><svg class="ic"><use href="#i-vk"/></svg><span><small>ВКонтакте</small><b>vk.com/club</b></span></a>
         <div class="cline"><svg class="ic"><use href="#i-key"/></svg><span><small>Разработчик</small><b>[Имя или ИП, ИНН — заполнить]</b></span></div>

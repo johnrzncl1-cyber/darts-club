@@ -1,7 +1,8 @@
-/* Дартс Клуб — сайт. Настройки заявки: */
+/* Сайт программы. Настройки заявки: */
 const LEAD = {
-  email: 'info@example.com',            // ← почта, на которую уходят заявки (заглушка)
-  endpoint: ''                          // ← адрес обработчика формы (Formspree, Яндекс Формы и т.п.); пусто — письмо через почтовую программу
+  email: 'darts-center@yandex.ru',                                   // куда приходят заявки
+  endpoint: 'https://formsubmit.co/ajax/darts-center@yandex.ru',     // сервис отправки писем FormSubmit
+  tag: '#дартс-центр.лицензии'                                       // начало темы письма
 };
 
 (() => {
@@ -74,24 +75,44 @@ const LEAD = {
 
   /* ---------- заявка ---------- */
   $$('[data-plan]').forEach(b => b.addEventListener('click', () => { $('#plan').value = b.dataset.plan; }));
-  const form = $('#lead'), msg = $('#lead-msg');
+  const form = $('#lead'), msg = $('#lead-msg'), btn = form.querySelector('button[type=submit]');
   const say = (t, err) => { msg.textContent = t; msg.className = 'form-msg show' + (err ? ' err' : ''); };
+  const mailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(form));
-    if (!d.name.trim()) { say('Укажите имя.', true); form.name.focus(); return; }
-    if (!d.contact.trim()) { say('Укажите телефон или e-mail, чтобы мы могли ответить.', true); form.contact.focus(); return; }
+    for (const k in d) if (typeof d[k] === 'string') d[k] = d[k].trim();
+    if (!d.name) { say('Укажите имя.', true); form.name.focus(); return; }
+    if (!d.email) { say('Укажите электронную почту — на неё придёт ответ.', true); form.email.focus(); return; }
+    if (!mailOk(d.email)) { say('Проверьте адрес электронной почты: в нём должны быть @ и домен, например club@mail.ru.', true); form.email.focus(); return; }
     if (!form.agree.checked) { say('Отметьте согласие на обработку данных.', true); return; }
-    const text = `Имя: ${d.name}\nКлуб: ${d.club || '—'}\nКонтакт: ${d.contact}\nИгроков: ${d.size || '—'}\nИнтересует: ${d.plan}\n\n${d.msg || ''}`;
-    if (LEAD.endpoint) {
-      try {
-        const r = await fetch(LEAD.endpoint, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
-        if (!r.ok) throw 0;
-        form.reset(); say('Заявка отправлена. Мы свяжемся с вами в ближайшее время.');
-      } catch { say(`Заявка не отправилась. Напишите нам на ${LEAD.email}.`, true); }
-      return;
-    }
-    location.href = `mailto:${LEAD.email}?subject=${encodeURIComponent('Заявка: Дартс Клуб — ' + d.plan)}&body=${encodeURIComponent(text)}`;
-    say(`Откроется почтовая программа с готовым письмом — нажмите в ней «Отправить». Если она не открылась, напишите нам на ${LEAD.email}.`);
+    if (d._honey) return;
+    const subject = [LEAD.tag, d.club, d.email].filter(Boolean).join(' ');
+    const payload = {
+      _subject: subject,
+      _template: 'basic',
+      _captcha: 'false',
+      'Имя': d.name,
+      'Клуб или секция': d.club || '—',
+      email: d.email,
+      'Телефон': d.phone || '—',
+      'Игроков в клубе': d.size || '—',
+      'Интересует': d.plan,
+      'Комментарий': d.msg || '—'
+    };
+    btn.disabled = true; say('Отправляем заявку…');
+    try {
+      const r = await fetch(LEAD.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || j.success === 'false' || j.success === false) throw new Error(j.message || r.status);
+      form.reset();
+      say('Заявка отправлена. Мы ответим на указанную почту.');
+    } catch (err) {
+      say(`Заявка не отправилась. Напишите нам на ${LEAD.email} — тема: ${subject}`, true);
+    } finally { btn.disabled = false; }
   });
 })();

@@ -214,6 +214,9 @@ section{padding-block:clamp(56px,8vw,104px)}
 .form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
 .form .agree{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400}
 .form .agree input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent)}
+.form .req{color:var(--hot)}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form button[disabled]{opacity:.6;cursor:progress}
 .form-msg{grid-column:1/-1;padding:12px 14px;border-radius:6px;background:var(--accent-soft);color:#084d2a;display:none}
 .form-msg.show{display:block}
 .form-msg.err{background:var(--hot-soft);color:#8f201a}
