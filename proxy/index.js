@@ -7,6 +7,8 @@
 //   INTRA_PASSWORD   пароль APIUser (лучше как секрет Lockbox)
 //   SERVICE_ID       1    — сервис «Лицензии Дартс-Центр»
 //   TYPE_ID          0    — тип заявки; 0 = тип по умолчанию для сервиса
+//   STATUS_ID        0    — статус новой заявки; 0 = по умолчанию для сервиса
+//   PRIORITY_ID      0    — приоритет новой заявки; 0 = по умолчанию для сервиса
 //   ROLE_ID          54   — роль новых заявителей
 //   COMPANY_ID       86   — компания новых заявителей
 //   ALLOWED_ORIGINS  https://johnrzncl1-cyber.github.io  (через запятую, если адресов несколько)
@@ -16,6 +18,8 @@ const INTRA_URL = env('INTRA_URL').replace(/\/+$/, '');
 const AUTH = 'Basic ' + Buffer.from(env('INTRA_LOGIN') + ':' + env('INTRA_PASSWORD')).toString('base64');
 const SERVICE_ID = +env('SERVICE_ID', '1');
 const TYPE_ID = +env('TYPE_ID', '0');
+const STATUS_ID = +env('STATUS_ID', '0');
+const PRIORITY_ID = +env('PRIORITY_ID', '0');
 const ROLE_ID = +env('ROLE_ID', '54');
 const COMPANY_ID = +env('COMPANY_ID', '86');
 const ORIGINS = env('ALLOWED_ORIGINS').split(',').map(s => s.trim().replace(/\/+$/, '')).filter(Boolean);
@@ -91,6 +95,7 @@ async function newUser(email, fio) {
 }
 
 async function taskDefaults() {
+  if (TYPE_ID && STATUS_ID && PRIORITY_ID) return { typeId: TYPE_ID, statusId: STATUS_ID, priorityId: PRIORITY_ID };
   let q = `/api/newtask?serviceid=${SERVICE_ID}` + (TYPE_ID ? `&tasktypeid=${TYPE_ID}` : '');
   let nt = await intra('GET', q);
   if (nt && nt.Task) nt = nt.Task;
@@ -103,9 +108,20 @@ async function taskDefaults() {
     nt = await intra('GET', `/api/newtask?serviceid=${SERVICE_ID}&tasktypeid=${typeId}`);
     if (nt && nt.Task) nt = nt.Task;
   }
-  const statusId = +(nt && nt.StatusId) || 0, priorityId = +(nt && nt.PriorityId) || 0;
+  const statusId = STATUS_ID || +(nt && nt.StatusId) || 0, priorityId = PRIORITY_ID || +(nt && nt.PriorityId) || 0;
   if (!statusId || !priorityId) throw new Error('IntraService не вернул статус и приоритет по умолчанию');
   return { typeId, statusId, priorityId };
+}
+
+// подсказка, если сервис указан неверно: сервисы, похожие на «Лицензии Дартс-Центр»
+async function serviceHint() {
+  try {
+    const all = list(await intra('GET', '/api/service?pagesize=500'));
+    const pick = all.filter(x => x && /лиценз|дартс/i.test(String(x.Name || '') + ' ' + String(x.Path || '')));
+    const show = (pick.length ? pick : all).filter(x => !x.IsArchive).slice(0, 8)
+      .map(x => `${x.Id} — ${x.Path || x.Name}${x.ParentId ? '' : ' (корень)'}`);
+    return show.length ? ' Сервисы в IntraService: ' + show.join('; ') + '. Укажите номер нужного в SERVICE_ID.' : '';
+  } catch (e) { return ''; }
 }
 
 const clip = (v, n) => String(v ?? '').replace(/\s+$/g, '').slice(0, n).trim();
@@ -169,7 +185,8 @@ module.exports.handler = async function (event) {
     recent.push(now); hits.set(ip, recent);
     return reply(200, { ok: true, id: t && t.Id, userCreated: created }, origin);
   } catch (e) {
-    const detail = String(e && e.message ? e.message : e).slice(0, 400);
+    let detail = String(e && e.message ? e.message : e).slice(0, 400);
+    if (/newtask|\/api\/task/.test(detail) && /HTTP 400/.test(detail)) detail += await serviceHint();
     console.error('Шаг «' + step + '»: ' + detail);
     return reply(502, { ok: false, error: 'Не удалось создать заявку. Попробуйте позже.', step, detail }, origin);
   }
