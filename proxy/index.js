@@ -41,15 +41,29 @@ const reply = (code, obj, origin) => ({
 });
 
 async function intra(method, path, body) {
-  const r = await fetch(INTRA_URL + path, {
-    method,
-    headers: { Authorization: AUTH, Accept: 'application/json', ...(body ? { 'Content-Type': 'application/json' } : {}) },
-    body: body ? JSON.stringify(body) : undefined
-  });
+  if (!INTRA_URL) throw new Error('Не задана переменная INTRA_URL');
+  if (!env('INTRA_LOGIN') || !env('INTRA_PASSWORD')) throw new Error('Не заданы INTRA_LOGIN или INTRA_PASSWORD');
+  let r;
+  try {
+    r = await fetch(INTRA_URL + path, {
+      method,
+      headers: { Authorization: AUTH, Accept: 'application/json', ...(body ? { 'Content-Type': 'application/json' } : {}) },
+      body: body ? JSON.stringify(body) : undefined,
+      signal: AbortSignal.timeout(20000)
+    });
+  } catch (e) {
+    const c = e && e.cause ? ' (' + (e.cause.code || e.cause.message || e.cause) + ')' : '';
+    throw new Error(`Нет связи с ${INTRA_URL}: ${e && e.message}${c}`);
+  }
   const text = await r.text();
   let data = null;
   try { data = text ? JSON.parse(text) : null; } catch { /* не JSON */ }
-  if (!r.ok) throw new Error(`IntraService ${method} ${path.split('?')[0]}: HTTP ${r.status} ${(data && data.Message) || text.slice(0, 200)}`);
+  if (!r.ok) {
+    let m = (data && (data.Message || data.message)) || text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 200);
+    if (r.status === 401) m = 'неверный логин или пароль ' + env('INTRA_LOGIN') + '. ' + m;
+    if (r.status === 403) m = 'у ' + env('INTRA_LOGIN') + ' нет прав на это действие. ' + m;
+    throw new Error(`IntraService ${method} ${path.split('?')[0]}: HTTP ${r.status} ${m}`);
+  }
   return data;
 }
 const list = d => Array.isArray(d) ? d : (d && Object.values(d).find(Array.isArray)) || [];
@@ -125,9 +139,11 @@ module.exports.handler = async function (event) {
   if (!EMAIL_RE.test(email)) return reply(400, { ok: false, error: 'Проверьте адрес электронной почты' }, origin);
   if (!d.agree) return reply(400, { ok: false, error: 'Нужно согласие на обработку данных' }, origin);
 
+  let step = 'поиск заявителя по e-mail';
   try {
     let user = await findUser(email), created = false;
-    if (!user) { user = await newUser(email, name); created = true; }
+    if (!user) { step = 'создание пользователя-заявителя'; user = await newUser(email, name); created = true; }
+    step = 'тип, статус и приоритет заявки по умолчанию';
     const { typeId, statusId, priorityId } = await taskDefaults();
     const title = `Заявка с сайта: ${plan === 'Вопрос' ? 'вопрос' : 'тариф «' + plan + '»'}${club ? ' — ' + club : ''}`.slice(0, 250);
     const description = [
@@ -143,6 +159,7 @@ module.exports.handler = async function (event) {
       '',
       'Источник: сайт ' + (origin || '—')
     ].join('\n');
+    step = 'создание задачи';
     let t = await intra('POST', '/api/task', {
       Name: title, Description: description,
       ServiceId: SERVICE_ID, TypeId: typeId, StatusId: statusId, PriorityId: priorityId,
@@ -152,7 +169,8 @@ module.exports.handler = async function (event) {
     recent.push(now); hits.set(ip, recent);
     return reply(200, { ok: true, id: t && t.Id, userCreated: created }, origin);
   } catch (e) {
-    console.error(e && e.message ? e.message : e);
-    return reply(502, { ok: false, error: 'Не удалось создать заявку. Попробуйте позже.' }, origin);
+    const detail = String(e && e.message ? e.message : e).slice(0, 400);
+    console.error('Шаг «' + step + '»: ' + detail);
+    return reply(502, { ok: false, error: 'Не удалось создать заявку. Попробуйте позже.', step, detail }, origin);
   }
 };

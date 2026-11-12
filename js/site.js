@@ -2,7 +2,7 @@
 const LEAD = {
   // Адрес функции-посредника в Яндекс Облаке, которая создаёт заявку в IntraService.
   // Вида https://functions.yandexcloud.net/d4e... — см. README, раздел «Заявки в IntraService».
-  api: '',
+  api: 'https://functions.yandexcloud.net/d4eggh1oo48iunnqm6ic',
   // Запасной путь, пока адрес функции не указан или она недоступна: письмо через FormSubmit.
   email: 'darts-center@yandex.ru',
   mailEndpoint: 'https://formsubmit.co/ajax/darts-center@yandex.ru',
