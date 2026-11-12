@@ -3,9 +3,8 @@ const LEAD = {
   // Адрес функции-посредника в Яндекс Облаке, которая создаёт заявку в IntraService.
   // Вида https://functions.yandexcloud.net/d4e... — см. README, раздел «Заявки в IntraService».
   api: 'https://functions.yandexcloud.net/d4eggh1oo48iunnqm6ic',
-  // Запасной путь, пока адрес функции не указан или она недоступна: письмо через FormSubmit.
+  // Если заявка не отправилась — посетителю предлагается написать на этот адрес.
   email: 'darts-center@yandex.ru',
-  mailEndpoint: 'https://formsubmit.co/ajax/darts-center@yandex.ru',
   tag: '#дартс-центр.лицензии'
 };
 
@@ -93,21 +92,6 @@ const LEAD = {
     if (!r.ok || !j.ok) throw new Error(j.error || r.status);
     return j.id ? `Заявка № ${j.id} принята. Ответим на указанную почту.` : 'Заявка принята. Ответим на указанную почту.';
   };
-  const toMail = async d => {
-    const r = await fetch(LEAD.mailEndpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        _subject: [LEAD.tag, d.club, d.email].filter(Boolean).join(' '),
-        _template: 'basic', _captcha: 'false',
-        'Имя': d.name, 'Клуб или секция': d.club || '—', email: d.email, 'Телефон': d.phone || '—',
-        'Игроков в клубе': d.size || '—', 'Интересует': d.plan, 'Комментарий': d.message || '—'
-      })
-    });
-    const j = await r.json().catch(() => ({}));
-    if (!r.ok || j.success === 'false' || j.success === false) throw new Error(j.message || r.status);
-    return 'Заявка отправлена. Ответим на указанную почту.';
-  };
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(form));
@@ -120,13 +104,8 @@ const LEAD = {
     delete d.agree;
     btn.disabled = true; say('Отправляем заявку…');
     try {
-      let text;
-      try {
-        if (!LEAD.api) throw new Error('no api');
-        text = await toApi(d);
-      } catch (apiErr) {
-        text = await toMail(d);
-      }
+      if (!LEAD.api) throw new Error('no api');
+      const text = await toApi(d);
       form.reset();
       say(text);
     } catch (err) {
