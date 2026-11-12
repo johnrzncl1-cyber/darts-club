@@ -227,6 +227,17 @@ h2 .tier,h3 .tier{margin-left:8px;position:relative;top:-.12em}
 /* ---------- contact (только форма) ---------- */
 .wrap.narrow{max-width:860px}
 
+/* ---------- legal pages ---------- */
+.legal h1{font-size:clamp(34px,4.6vw,50px);font-weight:700;margin-bottom:8px}
+.legal .legal-date{color:var(--muted);font-size:15px;margin-bottom:28px}
+.legal h2{font-size:26px;margin:30px 0 10px}
+.legal p,.legal li{color:var(--ink2);line-height:1.6}
+.legal p+p,.legal ul+p{margin-top:10px}
+.legal ul{margin:8px 0 0;padding-left:22px;display:grid;gap:6px}
+.legal .legal-back{margin-top:36px}
+mark.todo{background:#fff3c4;color:#6b4e00;padding:0 4px;border-radius:3px}
+.form .agree a{color:var(--accent)}
+
 /* ---------- faq ---------- */
 .faq{display:grid;gap:8px;max-width:860px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
