@@ -1,8 +1,12 @@
-/* Сайт программы. Настройки заявки: */
+/* Сайт программы Дартс-Центр. Настройки заявки: */
 const LEAD = {
-  email: 'darts-center@yandex.ru',                                   // куда приходят заявки
-  endpoint: 'https://formsubmit.co/ajax/darts-center@yandex.ru',     // сервис отправки писем FormSubmit
-  tag: '#дартс-центр.лицензии'                                       // начало темы письма
+  // Адрес функции-посредника в Яндекс Облаке, которая создаёт заявку в IntraService.
+  // Вида https://functions.yandexcloud.net/d4e... — см. README, раздел «Заявки в IntraService».
+  api: '',
+  // Запасной путь, пока адрес функции не указан или она недоступна: письмо через FormSubmit.
+  email: 'darts-center@yandex.ru',
+  mailEndpoint: 'https://formsubmit.co/ajax/darts-center@yandex.ru',
+  tag: '#дартс-центр.лицензии'
 };
 
 (() => {
@@ -78,6 +82,32 @@ const LEAD = {
   const form = $('#lead'), msg = $('#lead-msg'), btn = form.querySelector('button[type=submit]');
   const say = (t, err) => { msg.textContent = t; msg.className = 'form-msg show' + (err ? ' err' : ''); };
   const mailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  const t0 = Date.now();
+  const toApi = async d => {
+    const r = await fetch(LEAD.api, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...d, agree: true, elapsed: Date.now() - t0 })
+    });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.ok) throw new Error(j.error || r.status);
+    return j.id ? `Заявка № ${j.id} принята. Ответим на указанную почту.` : 'Заявка принята. Ответим на указанную почту.';
+  };
+  const toMail = async d => {
+    const r = await fetch(LEAD.mailEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: [LEAD.tag, d.club, d.email].filter(Boolean).join(' '),
+        _template: 'basic', _captcha: 'false',
+        'Имя': d.name, 'Клуб или секция': d.club || '—', email: d.email, 'Телефон': d.phone || '—',
+        'Игроков в клубе': d.size || '—', 'Интересует': d.plan, 'Комментарий': d.message || '—'
+      })
+    });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || j.success === 'false' || j.success === false) throw new Error(j.message || r.status);
+    return 'Заявка отправлена. Ответим на указанную почту.';
+  };
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(form));
@@ -86,33 +116,21 @@ const LEAD = {
     if (!d.email) { say('Укажите электронную почту — на неё придёт ответ.', true); form.email.focus(); return; }
     if (!mailOk(d.email)) { say('Проверьте адрес электронной почты: в нём должны быть @ и домен, например club@mail.ru.', true); form.email.focus(); return; }
     if (!form.agree.checked) { say('Отметьте согласие на обработку данных.', true); return; }
-    if (d._honey) return;
-    const subject = [LEAD.tag, d.club, d.email].filter(Boolean).join(' ');
-    const payload = {
-      _subject: subject,
-      _template: 'basic',
-      _captcha: 'false',
-      'Имя': d.name,
-      'Клуб или секция': d.club || '—',
-      email: d.email,
-      'Телефон': d.phone || '—',
-      'Игроков в клубе': d.size || '—',
-      'Интересует': d.plan,
-      'Комментарий': d.msg || '—'
-    };
+    if (d.website) return;
+    delete d.agree;
     btn.disabled = true; say('Отправляем заявку…');
     try {
-      const r = await fetch(LEAD.endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      const j = await r.json().catch(() => ({}));
-      if (!r.ok || j.success === 'false' || j.success === false) throw new Error(j.message || r.status);
+      let text;
+      try {
+        if (!LEAD.api) throw new Error('no api');
+        text = await toApi(d);
+      } catch (apiErr) {
+        text = await toMail(d);
+      }
       form.reset();
-      say('Заявка отправлена. Мы ответим на указанную почту.');
+      say(text);
     } catch (err) {
-      say(`Заявка не отправилась. Напишите нам на ${LEAD.email} — тема: ${subject}`, true);
+      say(`Заявка не отправилась. Напишите нам на ${LEAD.email} — тема: ${[LEAD.tag, d.club, d.email].filter(Boolean).join(' ')}`, true);
     } finally { btn.disabled = false; }
   });
 })();

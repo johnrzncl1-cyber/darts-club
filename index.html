@@ -3,31 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Дартс Клуб — программа для тренера дартс-клуба и секции</title>
-<meta name="description" content="Дартс Клуб — программа для тренировок у мишени: шесть видов тренировок, табло на телевизор, сетка 501, итоги дня, рейтинги, анализ игроков, протоколы и личный кабинет игрока в смартфоне. Работает без интернета.">
+<title>Дартс-Центр — программа для тренера дартс-клуба и секции</title>
+<meta name="description" content="Дартс-Центр — программа для тренировок у мишени: шесть видов тренировок, табло на телевизор, сетка 501, итоги дня, рейтинги, анализ игроков, учёт оплаты, протоколы и личный кабинет игрока в смартфоне. Работает без интернета.">
 <meta name="theme-color" content="#fbfcfa">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Дартс Клуб — программа для тренера дартс-клуба">
-<meta property="og:description" content="Тренировки у мишени, табло, сетка 501, рейтинги, анализ игроков и личный кабинет в смартфоне.">
+<meta property="og:title" content="Дартс-Центр — программа для тренера дартс-клуба">
+<meta property="og:description" content="Тренировки у мишени, табло, сетка 501, рейтинги, анализ игроков, оплата и личный кабинет в смартфоне.">
 <meta property="og:image" content="img/shots/br-board.webp">
-<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="preload" href="fonts/fira-sans-condensed-cyrillic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(5 19) rotate(45)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-15.4"></path><path fill="#13854a" stroke="none" d="M0 -14.2L-3.2 -19.6L0 -17.6L3.2 -19.6Z"></path></g></symbol><symbol id="i-players" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7.5" r="3.2"></circle><circle cx="16.5" cy="8.5" r="2.7"></circle><path d="M2 20v-1a5.5 5.5 0 0 1 11 0v1M14 14.4a4.6 4.6 0 0 1 8 3.1V20"></path><circle fill="#d23a2f" stroke="none" cx="20" cy="4" r="1.6"></circle></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7.5" r="3.2"></circle><circle cx="16.5" cy="8.5" r="2.7"></circle><path d="M2 20v-1a5.5 5.5 0 0 1 11 0v1M14 14.4a4.6 4.6 0 0 1 8 3.1V20"></path><circle fill="#d23a2f" stroke="none" cx="20" cy="4" r="1.6"></circle></symbol><symbol id="i-train" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h16a1.5 1.5 0 0 1 1.5 1.5v9.5a1.5 1.5 0 0 1-1.5 1.5H10l-5 4v-4H4a1.5 1.5 0 0 1-1.5-1.5V6A1.5 1.5 0 0 1 4 4.5z"></path><path d="M7 9h10M7 12.5h6"></path><circle fill="#d23a2f" stroke="none" cx="17.5" cy="12.5" r="1.4"></circle></symbol><symbol id="i-dash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="10" rx="1.5"></rect><rect x="13" y="3" width="8" height="6" rx="1.5"></rect><rect x="3" y="15" width="8" height="6" rx="1.5"></rect><rect x="13" y="11" width="8" height="10" rx="1.5"></rect><circle fill="#d23a2f" stroke="none" cx="17" cy="16" r="1.6"></circle><circle fill="#13854a" stroke="none" cx="7" cy="8" r="1.6"></circle></symbol><symbol id="i-club" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10v5a5 5 0 0 1-10 0z"></path><path d="M7 5H4v1.5A3.5 3.5 0 0 0 7.5 10M17 5h3v1.5A3.5 3.5 0 0 1 16.5 10M12 13v4M8 21h8M9.5 17h5l.8 4H8.7z"></path><circle fill="#13854a" stroke="none" cx="12" cy="7" r="2.6"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="7" r="1"></circle></symbol><symbol id="i-analysis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle fill="#13854a" stroke="none" cx="12" cy="12" r="6"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="12" r="2.8"></circle><path d="M12 1v4M12 19v4M1 12h4M19 12h4"></path></symbol><symbol id="i-charts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M4 17l5-5 3.5 3L18.5 8.5"></path><path fill="#13854a" stroke="none" d="M18.5 8.5l-.3-4.6 4.6-.3-1.4 1.4 0 0-.5 2.6-2.6.5z"></path><circle fill="#d23a2f" stroke="none" cx="9" cy="12" r="1.3"></circle></symbol><symbol id="i-stats" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><rect x="4.5" y="12" width="3.5" height="7" rx=".8"></rect><rect fill="#13854a" stroke="none" x="10.25" y="7" width="3.5" height="12" rx=".8"></rect><rect x="16" y="10" width="3.5" height="9" rx=".8"></rect><circle fill="#d23a2f" stroke="none" cx="12" cy="4" r="1.6"></circle></symbol><symbol id="i-proto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.8h8.5L19 7.3V20a1.3 1.3 0 0 1-1.3 1.3H6A1.3 1.3 0 0 1 4.7 20V4.1A1.3 1.3 0 0 1 6 2.8z"></path><path d="M14.3 2.8v4.7H19M8 12h8M8 15.5h8M8 19h5"></path><circle fill="#d23a2f" stroke="none" cx="9" cy="8" r="1.4"></circle></symbol><symbol id="i-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1.5"></rect><path d="M5 9v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"></path><path d="M10 13h4"></path><circle fill="#d23a2f" stroke="none" cx="18.5" cy="6.5" r="1.1"></circle></symbol><symbol id="i-learn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.2c3-1.4 6-1.4 9 .6 3-2 6-2 9-.6v14c-3-1.4-6-1.4-9 .6-3-2-6-2-9-.6z"></path><path d="M12 5.8v14"></path><circle fill="#13854a" stroke="none" cx="7.5" cy="10" r="1.6"></circle><circle fill="#d23a2f" stroke="none" cx="16.5" cy="10" r="1.6"></circle></symbol><symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"></path><circle cx="12" cy="12" r="6.6"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="12" r="1.2"></circle></symbol><symbol id="i-g-501" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(5 19) rotate(45)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-15.4"></path><path fill="#13854a" stroke="none" d="M0 -14.2L-3.2 -19.6L0 -17.6L3.2 -19.6Z"></path></g></symbol><symbol id="i-g-br" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path fill="#d23a2f" stroke="none" d="M10.44 2.12 A10 10 0 0 1 13.56 2.12 L13.31 3.70 A8.4 8.4 0 0 0 10.69 3.70Z"></path><path fill="#13854a" stroke="none" d="M13.56 2.12 A10 10 0 0 1 16.54 3.09 L15.81 4.52 A8.4 8.4 0 0 0 13.31 3.70Z"></path><path fill="#d23a2f" stroke="none" d="M11.00 5.68 A6.4 6.4 0 0 1 13.00 5.68 L12.78 7.06 A5 5 0 0 0 11.22 7.06Z"></path><path fill="#13854a" stroke="none" d="M13.00 5.68 A6.4 6.4 0 0 1 14.91 6.30 L14.27 7.54 A5 5 0 0 0 12.78 7.06Z"></path><circle cx="12" cy="12" r="6.4"></circle><path d="M12.00 22.00L12.00 14.60M12.00 9.40L12.00 2.00"></path><path d="M6.12 20.09L10.47 14.10M13.53 9.90L17.88 3.91"></path><path d="M2.49 15.09L9.53 12.80M14.47 11.20L21.51 8.91"></path><path d="M2.49 8.91L9.53 11.20M14.47 12.80L21.51 15.09"></path><path d="M6.12 3.91L10.47 9.90M13.53 14.10L17.88 20.09"></path><circle fill="#13854a" stroke="none" cx="12" cy="12" r="2.6"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="12" r="1.1"></circle></symbol><symbol id="i-g-sr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke-dasharray="2 2.2"></circle><path d="M12 2a10 10 0 0 1 0 20z" fill="none"></path><path fill="#d23a2f" stroke="none" d="M12 2a10 10 0 0 1 9.2 6L19.6 8.7A8.3 8.3 0 0 0 12 3.7z"></path><path fill="#13854a" stroke="none" d="M21.2 8a10 10 0 0 1 0 8l-1.6-.7a8.3 8.3 0 0 0 0-6.6z"></path><path d="M12 6.4a5.6 5.6 0 0 1 0 11.2"></path><circle fill="#13854a" stroke="none" cx="12" cy="12" r="2.4"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="12" r="1"></circle></symbol><symbol id="i-g-s20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22.5L5.6 2.6A20 20 0 0 1 18.4 2.6Z"></path><path fill="#d23a2f" stroke="none" d="M5.6 2.6A20 20 0 0 1 18.4 2.6L17.6 5.1A17.4 17.4 0 0 0 6.4 5.1Z"></path><path fill="#d23a2f" stroke="none" d="M8.1 10.4A12.2 12.2 0 0 1 15.9 10.4L15.2 12.6A10 10 0 0 0 8.8 12.6Z"></path><circle fill="#13854a" stroke="none" cx="12" cy="20" r="1.5"></circle></symbol><symbol id="i-g-sc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path fill="#d23a2f" stroke="none" d="M3.5 17.2Q12 14.6 20.5 17.2L19.3 21.4Q12 19.4 4.7 21.4Z"></path><g transform="translate(8 18.2) rotate(-16)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-11.4"></path><path fill="#13854a" stroke="none" d="M0 -10.2L-3.2 -15.6L0 -13.6L3.2 -15.6Z"></path></g><g transform="translate(12 17.6) rotate(0)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-11.9"></path><path fill="#13854a" stroke="none" d="M0 -10.7L-3.2 -16.1L0 -14.1L3.2 -16.1Z"></path></g><g transform="translate(16 18.2) rotate(16)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-11.4"></path><path fill="#13854a" stroke="none" d="M0 -10.2L-3.2 -15.6L0 -13.6L3.2 -15.6Z"></path></g></symbol><symbol id="i-g-dbl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="8.4"></circle><path fill="#d23a2f" stroke="none" d="M10.44 2.12 A10 10 0 0 1 13.56 2.12 L13.31 3.70 A8.4 8.4 0 0 0 10.69 3.70Z"></path><path fill="#13854a" stroke="none" d="M20.91 7.46 A10 10 0 0 1 21.88 10.44 L20.30 10.69 A8.4 8.4 0 0 0 19.48 8.19Z"></path><path fill="#d23a2f" stroke="none" d="M19.07 19.07 A10 10 0 0 1 16.54 20.91 L15.81 19.48 A8.4 8.4 0 0 0 17.94 17.94Z"></path><path fill="#13854a" stroke="none" d="M7.46 20.91 A10 10 0 0 1 4.93 19.07 L6.06 17.94 A8.4 8.4 0 0 0 8.19 19.48Z"></path><path fill="#d23a2f" stroke="none" d="M2.12 10.44 A10 10 0 0 1 3.09 7.46 L4.52 8.19 A8.4 8.4 0 0 0 3.70 10.69Z"></path><circle cx="12" cy="12" r="4.5"></circle><circle fill="#13854a" stroke="none" cx="12" cy="12" r="1.6"></circle></symbol><symbol id="i-tv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="1.5"/><path d="M8 20.5h8M12 16.5v4"/><circle cx="12" cy="10.2" r="2.2" fill="#d23a2f" stroke="none"/></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10.5 18.5h3"/><circle cx="12" cy="9" r="2" fill="#13854a" stroke="none"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6.5l9 6.5 9-6.5"/><circle cx="19" cy="5.5" r="1.8" fill="#d23a2f" stroke="none"/></symbol><symbol id="i-voice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol><symbol id="i-offline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8.5 20h7M12 16v4"/><path d="M8 10.5l2.6 2.4L16 8" stroke="#13854a"/></symbol><symbol id="i-backup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9a4 4 0 0 1-.5 7.97"/><path d="M12 12v8M9 17l3 3 3-3"/><circle cx="18" cy="6" r="1.6" fill="#13854a" stroke="none"/></symbol><symbol id="i-import" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5z"/><path d="M14 3v4.5h4.5M12 10.5v6M9.3 13.8L12 16.5l2.7-2.7"/></symbol><symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.3a9.5 9.5 0 0 1 13 0M8.6 15.5a5 5 0 0 1 6.8 0"/><circle cx="12" cy="19" r="1.5" fill="#d23a2f" stroke="none"/></symbol><symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="M11.3 11.7L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/><circle cx="8" cy="15" r="1.4" fill="#13854a" stroke="none"/></symbol><symbol id="i-vk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><path d="M6.5 8.5c.3 4.2 2.6 7 6.3 7h.4v-2.6c1.3.1 2.3 1.1 2.7 2.6h2c-.5-1.9-1.8-3-2.6-3.4.8-.5 2-1.7 2.3-3.6h-1.8c-.4 1.5-1.5 2.7-2.6 2.8V8.5h-1.8v5c-1.1-.3-2.6-1.7-2.7-5z" fill="currentColor" stroke="none"/></symbol><symbol id="i-tg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4.5L3 11.4l5.6 2 2 6.1 3.1-3.6 4.6 3.6z"/><path d="M8.6 13.4l9-6.3-6.9 7.9"/></symbol><symbol id="i-call" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.5l1.8 4.6-2.3 1.5a11 11 0 0 0 6.4 6.4l1.5-2.3 4.6 1.8V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-qr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v1M14 20h1M17.5 20.5H21v-3"/><rect x="5.5" y="5.5" width="2" height="2" fill="currentColor" stroke="none"/><rect x="16.5" y="5.5" width="2" height="2" fill="currentColor" stroke="none"/><rect x="5.5" y="16.5" width="2" height="2" fill="#13854a" stroke="none"/></symbol><symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8V3.5h10V8"/><rect x="3" y="8" width="18" height="8.5" rx="1.5"/><path d="M7 14h10v6.5H7z"/><circle cx="17.5" cy="11" r="1" fill="#d23a2f" stroke="none"/></symbol><symbol id="i-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6"/></symbol></svg>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(5 19) rotate(45)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-15.4"></path><path fill="#13854a" stroke="none" d="M0 -14.2L-3.2 -19.6L0 -17.6L3.2 -19.6Z"></path></g></symbol><symbol id="i-players" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7.5" r="3.2"></circle><circle cx="16.5" cy="8.5" r="2.7"></circle><path d="M2 20v-1a5.5 5.5 0 0 1 11 0v1M14 14.4a4.6 4.6 0 0 1 8 3.1V20"></path><circle fill="#d23a2f" stroke="none" cx="20" cy="4" r="1.6"></circle></symbol><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7.5" r="3.2"></circle><circle cx="16.5" cy="8.5" r="2.7"></circle><path d="M2 20v-1a5.5 5.5 0 0 1 11 0v1M14 14.4a4.6 4.6 0 0 1 8 3.1V20"></path><circle fill="#d23a2f" stroke="none" cx="20" cy="4" r="1.6"></circle></symbol><symbol id="i-train" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h16a1.5 1.5 0 0 1 1.5 1.5v9.5a1.5 1.5 0 0 1-1.5 1.5H10l-5 4v-4H4a1.5 1.5 0 0 1-1.5-1.5V6A1.5 1.5 0 0 1 4 4.5z"></path><path d="M7 9h10M7 12.5h6"></path><circle fill="#d23a2f" stroke="none" cx="17.5" cy="12.5" r="1.4"></circle></symbol><symbol id="i-dash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="10" rx="1.5"></rect><rect x="13" y="3" width="8" height="6" rx="1.5"></rect><rect x="3" y="15" width="8" height="6" rx="1.5"></rect><rect x="13" y="11" width="8" height="10" rx="1.5"></rect><circle fill="#d23a2f" stroke="none" cx="17" cy="16" r="1.6"></circle><circle fill="#13854a" stroke="none" cx="7" cy="8" r="1.6"></circle></symbol><symbol id="i-club" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10v5a5 5 0 0 1-10 0z"></path><path d="M7 5H4v1.5A3.5 3.5 0 0 0 7.5 10M17 5h3v1.5A3.5 3.5 0 0 1 16.5 10M12 13v4M8 21h8M9.5 17h5l.8 4H8.7z"></path><circle fill="#13854a" stroke="none" cx="12" cy="7" r="2.6"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="7" r="1"></circle></symbol><symbol id="i-analysis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle fill="#13854a" stroke="none" cx="12" cy="12" r="6"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="12" r="2.8"></circle><path d="M12 1v4M12 19v4M1 12h4M19 12h4"></path></symbol><symbol id="i-charts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M4 17l5-5 3.5 3L18.5 8.5"></path><path fill="#13854a" stroke="none" d="M18.5 8.5l-.3-4.6 4.6-.3-1.4 1.4 0 0-.5 2.6-2.6.5z"></path><circle fill="#d23a2f" stroke="none" cx="9" cy="12" r="1.3"></circle></symbol><symbol id="i-stats" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><rect x="4.5" y="12" width="3.5" height="7" rx=".8"></rect><rect fill="#13854a" stroke="none" x="10.25" y="7" width="3.5" height="12" rx=".8"></rect><rect x="16" y="10" width="3.5" height="9" rx=".8"></rect><circle fill="#d23a2f" stroke="none" cx="12" cy="4" r="1.6"></circle></symbol><symbol id="i-proto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.8h8.5L19 7.3V20a1.3 1.3 0 0 1-1.3 1.3H6A1.3 1.3 0 0 1 4.7 20V4.1A1.3 1.3 0 0 1 6 2.8z"></path><path d="M14.3 2.8v4.7H19M8 12h8M8 15.5h8M8 19h5"></path><circle fill="#d23a2f" stroke="none" cx="9" cy="8" r="1.4"></circle></symbol><symbol id="i-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1.5"></rect><path d="M5 9v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"></path><path d="M10 13h4"></path><circle fill="#d23a2f" stroke="none" cx="18.5" cy="6.5" r="1.1"></circle></symbol><symbol id="i-learn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.2c3-1.4 6-1.4 9 .6 3-2 6-2 9-.6v14c-3-1.4-6-1.4-9 .6-3-2-6-2-9-.6z"></path><path d="M12 5.8v14"></path><circle fill="#13854a" stroke="none" cx="7.5" cy="10" r="1.6"></circle><circle fill="#d23a2f" stroke="none" cx="16.5" cy="10" r="1.6"></circle></symbol><symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"></path><circle cx="12" cy="12" r="6.6"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="12" r="1.2"></circle></symbol><symbol id="i-g-501" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(5 19) rotate(45)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-15.4"></path><path fill="#13854a" stroke="none" d="M0 -14.2L-3.2 -19.6L0 -17.6L3.2 -19.6Z"></path></g></symbol><symbol id="i-g-br" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path fill="#d23a2f" stroke="none" d="M10.44 2.12 A10 10 0 0 1 13.56 2.12 L13.31 3.70 A8.4 8.4 0 0 0 10.69 3.70Z"></path><path fill="#13854a" stroke="none" d="M13.56 2.12 A10 10 0 0 1 16.54 3.09 L15.81 4.52 A8.4 8.4 0 0 0 13.31 3.70Z"></path><path fill="#d23a2f" stroke="none" d="M11.00 5.68 A6.4 6.4 0 0 1 13.00 5.68 L12.78 7.06 A5 5 0 0 0 11.22 7.06Z"></path><path fill="#13854a" stroke="none" d="M13.00 5.68 A6.4 6.4 0 0 1 14.91 6.30 L14.27 7.54 A5 5 0 0 0 12.78 7.06Z"></path><circle cx="12" cy="12" r="6.4"></circle><path d="M12.00 22.00L12.00 14.60M12.00 9.40L12.00 2.00"></path><path d="M6.12 20.09L10.47 14.10M13.53 9.90L17.88 3.91"></path><path d="M2.49 15.09L9.53 12.80M14.47 11.20L21.51 8.91"></path><path d="M2.49 8.91L9.53 11.20M14.47 12.80L21.51 15.09"></path><path d="M6.12 3.91L10.47 9.90M13.53 14.10L17.88 20.09"></path><circle fill="#13854a" stroke="none" cx="12" cy="12" r="2.6"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="12" r="1.1"></circle></symbol><symbol id="i-g-sr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke-dasharray="2 2.2"></circle><path d="M12 2a10 10 0 0 1 0 20z" fill="none"></path><path fill="#d23a2f" stroke="none" d="M12 2a10 10 0 0 1 9.2 6L19.6 8.7A8.3 8.3 0 0 0 12 3.7z"></path><path fill="#13854a" stroke="none" d="M21.2 8a10 10 0 0 1 0 8l-1.6-.7a8.3 8.3 0 0 0 0-6.6z"></path><path d="M12 6.4a5.6 5.6 0 0 1 0 11.2"></path><circle fill="#13854a" stroke="none" cx="12" cy="12" r="2.4"></circle><circle fill="#d23a2f" stroke="none" cx="12" cy="12" r="1"></circle></symbol><symbol id="i-g-s20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22.5L5.6 2.6A20 20 0 0 1 18.4 2.6Z"></path><path fill="#d23a2f" stroke="none" d="M5.6 2.6A20 20 0 0 1 18.4 2.6L17.6 5.1A17.4 17.4 0 0 0 6.4 5.1Z"></path><path fill="#d23a2f" stroke="none" d="M8.1 10.4A12.2 12.2 0 0 1 15.9 10.4L15.2 12.6A10 10 0 0 0 8.8 12.6Z"></path><circle fill="#13854a" stroke="none" cx="12" cy="20" r="1.5"></circle></symbol><symbol id="i-g-sc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path fill="#d23a2f" stroke="none" d="M3.5 17.2Q12 14.6 20.5 17.2L19.3 21.4Q12 19.4 4.7 21.4Z"></path><g transform="translate(8 18.2) rotate(-16)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-11.4"></path><path fill="#13854a" stroke="none" d="M0 -10.2L-3.2 -15.6L0 -13.6L3.2 -15.6Z"></path></g><g transform="translate(12 17.6) rotate(0)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-11.9"></path><path fill="#13854a" stroke="none" d="M0 -10.7L-3.2 -16.1L0 -14.1L3.2 -16.1Z"></path></g><g transform="translate(16 18.2) rotate(16)"><path d="M0 0L0 -3.6"></path><path fill="currentColor" stroke="none" d="M-1.25 -3.4h2.5v5.2h-2.5z" transform="translate(0 -7)"></path><path d="M0 -10.2V-11.4"></path><path fill="#13854a" stroke="none" d="M0 -10.2L-3.2 -15.6L0 -13.6L3.2 -15.6Z"></path></g></symbol><symbol id="i-g-dbl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="8.4"></circle><path fill="#d23a2f" stroke="none" d="M10.44 2.12 A10 10 0 0 1 13.56 2.12 L13.31 3.70 A8.4 8.4 0 0 0 10.69 3.70Z"></path><path fill="#13854a" stroke="none" d="M20.91 7.46 A10 10 0 0 1 21.88 10.44 L20.30 10.69 A8.4 8.4 0 0 0 19.48 8.19Z"></path><path fill="#d23a2f" stroke="none" d="M19.07 19.07 A10 10 0 0 1 16.54 20.91 L15.81 19.48 A8.4 8.4 0 0 0 17.94 17.94Z"></path><path fill="#13854a" stroke="none" d="M7.46 20.91 A10 10 0 0 1 4.93 19.07 L6.06 17.94 A8.4 8.4 0 0 0 8.19 19.48Z"></path><path fill="#d23a2f" stroke="none" d="M2.12 10.44 A10 10 0 0 1 3.09 7.46 L4.52 8.19 A8.4 8.4 0 0 0 3.70 10.69Z"></path><circle cx="12" cy="12" r="4.5"></circle><circle fill="#13854a" stroke="none" cx="12" cy="12" r="1.6"></circle></symbol><symbol id="i-tv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12.5" rx="1.5"/><path d="M8 20.5h8M12 16.5v4"/><circle cx="12" cy="10.2" r="2.2" fill="#d23a2f" stroke="none"/></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10.5 18.5h3"/><circle cx="12" cy="9" r="2" fill="#13854a" stroke="none"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6.5l9 6.5 9-6.5"/><circle cx="19" cy="5.5" r="1.8" fill="#d23a2f" stroke="none"/></symbol><symbol id="i-voice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol><symbol id="i-offline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8.5 20h7M12 16v4"/><path d="M8 10.5l2.6 2.4L16 8" stroke="#13854a"/></symbol><symbol id="i-backup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9a4 4 0 0 1-.5 7.97"/><path d="M12 12v8M9 17l3 3 3-3"/><circle cx="18" cy="6" r="1.6" fill="#13854a" stroke="none"/></symbol><symbol id="i-import" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V7.5z"/><path d="M14 3v4.5h4.5M12 10.5v6M9.3 13.8L12 16.5l2.7-2.7"/></symbol><symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.3a9.5 9.5 0 0 1 13 0M8.6 15.5a5 5 0 0 1 6.8 0"/><circle cx="12" cy="19" r="1.5" fill="#d23a2f" stroke="none"/></symbol><symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="M11.3 11.7L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/><circle cx="8" cy="15" r="1.4" fill="#13854a" stroke="none"/></symbol><symbol id="i-vk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><path d="M6.5 8.5c.3 4.2 2.6 7 6.3 7h.4v-2.6c1.3.1 2.3 1.1 2.7 2.6h2c-.5-1.9-1.8-3-2.6-3.4.8-.5 2-1.7 2.3-3.6h-1.8c-.4 1.5-1.5 2.7-2.6 2.8V8.5h-1.8v5c-1.1-.3-2.6-1.7-2.7-5z" fill="currentColor" stroke="none"/></symbol><symbol id="i-tg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4.5L3 11.4l5.6 2 2 6.1 3.1-3.6 4.6 3.6z"/><path d="M8.6 13.4l9-6.3-6.9 7.9"/></symbol><symbol id="i-call" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.5l1.8 4.6-2.3 1.5a11 11 0 0 0 6.4 6.4l1.5-2.3 4.6 1.8V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.1A1.5 1.5 0 0 1 5 3.5z"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-qr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v1M14 20h1M17.5 20.5H21v-3"/><rect x="5.5" y="5.5" width="2" height="2" fill="currentColor" stroke="none"/><rect x="16.5" y="5.5" width="2" height="2" fill="currentColor" stroke="none"/><rect x="5.5" y="16.5" width="2" height="2" fill="#13854a" stroke="none"/></symbol><symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8V3.5h10V8"/><rect x="3" y="8" width="18" height="8.5" rx="1.5"/><path d="M7 14h10v6.5H7z"/><circle cx="17.5" cy="11" r="1" fill="#d23a2f" stroke="none"/></symbol><symbol id="i-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6"/></symbol><symbol id="i-pay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="1.8"/><path d="M2.5 9.5h19"/><path d="M10 15.5V12h2.2a1.3 1.3 0 0 1 0 2.6H9M9 15.5h3"/><circle cx="17.5" cy="14.5" r="1.6" fill="#13854a" stroke="none"/></symbol></svg>
 <a class="skip" href="#main">К содержанию</a>
 
 <header class="top">
   <div class="wrap top-in">
-    <a class="brand" href="#top" aria-label="Дартс Клуб — в начало"><img src="img/logo.svg" alt="" width="34" height="34">Дартс Клуб</a>
+    <a class="brand" href="#top" aria-label="Дартс-Центр — в начало"><img src="img/logo.png" alt="" width="34" height="34">Дартс-Центр</a>
     <nav class="nav" id="nav" aria-label="Разделы сайта">
+      <a href="#video"><svg class="ic"><use href="#i-tv"/></svg>Видео</a>
       <a href="#modes"><svg class="ic"><use href="#i-play"/></svg>Тренировки</a>
       <a href="#tour"><svg class="ic"><use href="#i-dash"/></svg>Разделы</a>
       <a href="#cabinet"><svg class="ic"><use href="#i-players"/></svg>Игрокам</a>
-      <a href="#prices"><svg class="ic"><use href="#i-club"/></svg>Цены</a>
+      <a href="#prices"><svg class="ic"><use href="#i-club"/></svg>Тарифы</a>
       <a href="#faq"><svg class="ic"><use href="#i-learn"/></svg>Вопросы</a>
-      <a href="#contact"><svg class="ic"><use href="#i-call"/></svg>Контакты</a>
     </nav>
     <a class="btn primary" href="#contact">Оставить заявку</a>
   </div>
@@ -39,11 +39,11 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <h1>Дартс Клуб<span>программа для тренера дартс-клуба и секции</span></h1>
-        <p class="lead">Тренер вводит попадания прямо у мишени, а программа сама считает очки и рекорды, показывает счёт на табло, готовит итоги дня, рейтинги и разбор каждого игрока. Игроки видят свою статистику в смартфоне.</p>
+        <h1>Дартс-Центр<span>программа для тренера дартс-клуба и секции</span></h1>
+        <p class="lead">Тренер вводит попадания прямо у мишени, а программа сама считает очки и рекорды, показывает счёт на табло, готовит итоги дня, рейтинги, разбор каждого игрока и ведёт оплату занятий. Игроки видят свою статистику в смартфоне.</p>
         <div class="cta">
           <a class="btn primary lg" href="#contact">Оставить заявку</a>
-          <a class="btn lg" href="#tour">Посмотреть разделы</a>
+          <a class="btn lg" href="#video">Смотреть видео</a>
         </div>
         <div class="faces" aria-hidden="true">
           <img src="img/av/voronov.webp" alt=""><img src="img/av/melnikova.webp" alt=""><img src="img/av/karpov.webp" alt=""><img src="img/av/krylova.webp" alt=""><img src="img/av/orlov.webp" alt="">
@@ -51,27 +51,38 @@
       </div>
       <div class="hero-shot">
         <button class="shot" type="button" data-full="img/shots/br-board.webp" data-cap="Табло Большого раунда: фото, счёт и текущий сектор крупно">
-          <img src="img/shots/br-board.webp" width="1600" height="1000" alt="Табло Большого раунда: четыре игрока с фото и счётом, посередине текущий сектор 3">
+          <img src="img/shots/br-board.webp" width="1600" height="1000" alt="Табло Большого раунда: четыре игрока с фото и счётом, посередине текущий сектор">
         </button>
-        <button class="shot" type="button" data-full="img/shots/cab-home.webp" data-cap="Личный кабинет игрока в смартфоне" data-narrow>
-          <img src="img/shots/cab-home.webp" width="780" height="1688" alt="Личный кабинет игрока: тренировки и рекорды" style="aspect-ratio:780/1000;object-fit:cover;object-position:top">
+        <button class="shot" type="button" data-full="img/shots/cab-dash.webp" data-cap="Личный кабинет игрока в смартфоне" data-narrow>
+          <img src="img/shots/cab-dash.webp" width="780" height="1688" alt="Личный кабинет игрока: посещения и лучшие результаты" style="aspect-ratio:780/1000;object-fit:cover;object-position:top">
         </button>
       </div>
     </div>
     <div class="facts">
       <div class="fact"><svg class="ic"><use href="#i-offline"/></svg><div><b>Работает без интернета</b><small>один файл, открывается в браузере на компьютере тренера</small></div></div>
       <div class="fact"><svg class="ic"><use href="#i-g-br"/></svg><div><b>Шесть видов тренировок</b><small>от Большого раунда до игры 501</small></div></div>
-      <div class="fact"><svg class="ic"><use href="#i-tv"/></svg><div><b>Табло на телевизор</b><small>счёт виден всему залу</small></div></div>
-      <div class="fact"><svg class="ic"><use href="#i-phone"/></svg><div><b>Кабинет игрока</b><small>своя статистика в смартфоне через Wi‑Fi клуба</small></div></div>
+      <div class="fact"><svg class="ic"><use href="#i-tv"/></svg><div><b>Табло на телевизор</b><small>счёт и голос — на весь зал</small></div></div>
+      <div class="fact"><svg class="ic"><use href="#i-phone"/></svg><div><b>Кабинет игрока</b><small>статистика и оплаты в смартфоне через Wi‑Fi клуба</small></div></div>
     </div>
   </div>
 </div>
 
+<!-- ============ Видео ============ -->
+<section class="alt" id="video" aria-labelledby="h-video">
+  <div class="wrap">
+    <div class="sec-h"><svg class="ic"><use href="#i-tv"/></svg><h2 id="h-video">Программа за пару минут</h2></div>
+    <p class="sec-intro">Короткий ролик: тренировка у мишени, табло, итоги, аналитика и личный кабинет игрока.</p>
+    <div class="video">
+      <video controls preload="metadata" playsinline poster="video/poster.webp" width="1920" height="1080"><source src="video/promo.mp4" type="video/mp4">Ваш браузер не показывает видео. <a href="video/promo.mp4">Скачать ролик</a>.</video>
+    </div>
+  </div>
+</section>
+
 <!-- ============ Тренировки ============ -->
-<section class="alt" id="modes" aria-labelledby="h-modes">
+<section id="modes" aria-labelledby="h-modes">
   <div class="wrap">
     <div class="sec-h"><svg class="ic"><use href="#i-play"/></svg><h2 id="h-modes">Тренировка у мишени</h2></div>
-    <p class="sec-intro">Выберите упражнение, отметьте до шести игроков и начинайте. Пришедших сегодня программа показывает с фото — состав набирается в несколько касаний.</p>
+    <p class="sec-intro">Выберите упражнение, отметьте до шести игроков и начинайте. Пришедших сегодня программа показывает с фото, а «Последний состав» набирает группу в одно касание.</p>
     <div class="modes">
       <article class="mode"><div class="gi"><svg><use href="#i-g-br"/></svg></div><h3>Большой раунд</h3><p>3 дротика в сектора 1–20 и Bull</p></article>
       <article class="mode"><div class="gi"><svg><use href="#i-g-sr"/></svg></div><h3>Малый раунд</h3><p>3 дротика в сектора 11–20 и Bull</p></article>
@@ -91,7 +102,7 @@
         <p>Число попаданий — кнопкой на экране или цифрой на клавиатуре. Очки, средние и итоги программа считает сама.</p>
         <ul class="ticks">
           <li>Режим «Один экран»: меню скрывается, таблица и клавиатура помещаются целиком — удобно у мишени.</li>
-          <li>Голос объявляет следующий сектор, набор и остаток, а в конце — итоги и места.</li>
+          <li>Можно вводить попадания или сразу очки — переключателем.</li>
           <li>Ошиблись — щёлкните по ячейке и введите заново.</li>
           <li>В конце игры итоги на весь экран: результат, среднее за последние 20 игр и изменение.</li>
         </ul>
@@ -100,7 +111,7 @@
 
     <div class="row2 flip">
       <button class="shot" type="button" data-full="img/shots/x501-game-full.webp" data-cap="Игра 501: подсказка закрытия, частые наборы и статистика партии">
-        <img src="img/shots/x501-game.webp" width="1600" height="1000" loading="lazy" alt="Игра 501: остаток 141, подсказка закрытия T20 · T19 · D12, кнопки частых наборов">
+        <img src="img/shots/x501-game.webp" width="1600" height="1000" loading="lazy" alt="Игра 501: остаток, подсказка закрытия, кнопки частых наборов">
         <span class="zoom"><svg class="ic"><use href="#i-zoom"/></svg>Увеличить</span>
       </button>
       <div class="txt">
@@ -108,7 +119,7 @@
         <p>Сеты и леги, кто начинает, до скольких побед — задаётся перед игрой. Дальше вводится только набор за подход.</p>
         <ul class="ticks">
           <li>Подсказка закрытия для остатка — например, T20 · T19 · D12.</li>
-          <li>Частые наборы — отдельными кнопками, кнопка «Перебор» и отмена последнего ввода.</li>
+          <li>Частые наборы — отдельными кнопками, «Перебор» и отмена последнего ввода.</li>
           <li>Учёт дротиков, брошенных в удвоение: процент закрытий считается честно.</li>
           <li>Статистика партии по ходу игры: средний набор, первые 9 дротиков, 100+, 140+, 180.</li>
         </ul>
@@ -117,17 +128,17 @@
 
     <div class="row2">
       <button class="shot" type="button" data-full="img/shots/tv-501.webp" data-cap="Окно табло на телевизоре: игра 501">
-        <img src="img/shots/tv-501.webp" width="1600" height="900" loading="lazy" alt="Табло 501 на весь экран: остаток 141 и 316, фото игроков, сет и лег посередине">
+        <img src="img/shots/tv-501.webp" width="1600" height="900" loading="lazy" alt="Табло 501 на весь экран: остаток каждого игрока, фото, сет и лег посередине">
         <span class="zoom"><svg class="ic"><use href="#i-zoom"/></svg>Увеличить</span>
       </button>
       <div class="txt">
-        <h3>Табло для всего зала</h3>
+        <h3>Табло и голос для всего зала <span class="tier">Клуб</span></h3>
         <p>Одна кнопка — и вместо таблицы крупные фото, имена и счёт. Табло можно вывести на телевизор или второй монитор.</p>
         <ul class="ticks">
           <li>Отдельное окно табло для телевизора, подключённого к компьютеру.</li>
-          <li>Трансляция по сети клуба: Smart TV, планшет или телефон открывают табло по адресу или QR-коду, ничего не устанавливая.</li>
-          <li>Адаптивный размер — табло подстраивается под любой экран.</li>
-          <li>Когда игры нет, табло показывает сетку дня или слайды со статистикой клуба за месяц.</li>
+          <li>Трансляция по сети клуба: Smart TV, Android-приставка, планшет или телефон открывают табло по адресу или QR-коду, ничего не устанавливая.</li>
+          <li>Голос объявляет сектор, набор, остаток, итоги и «180 очков выбил…» — на компьютере тренера, на табло или там и там.</li>
+          <li>Когда игры нет, табло показывает сетку дня или слайды с лидерами, рекордами и посещаемостью.</li>
         </ul>
       </div>
     </div>
@@ -135,19 +146,20 @@
 </section>
 
 <!-- ============ Разделы ============ -->
-<section id="tour" aria-labelledby="h-tour">
+<section class="alt" id="tour" aria-labelledby="h-tour">
   <div class="wrap">
     <div class="sec-h"><svg class="ic"><use href="#i-dash"/></svg><h2 id="h-tour">Всё, что считает программа</h2></div>
-    <p class="sec-intro">Пройдитесь по разделам — так они выглядят в программе. Игроки и результаты на снимках вымышленные.</p>
+    <p class="sec-intro">Пройдитесь по разделам — так они выглядят в программе. Метка показывает, с какого тарифа доступен раздел. Игроки и результаты на снимках вымышленные.</p>
 
     <div class="app">
-      <div class="app-bar"><span class="brand" aria-hidden="true"><img src="img/logo.svg" alt="" width="26" height="26">Дартс Клуб</span>
+      <div class="app-bar"><span class="brand" aria-hidden="true"><img src="img/logo.png" alt="" width="26" height="26">Дартс-Центр</span>
       <div class="tabs" role="tablist" aria-label="Разделы программы">
         <button role="tab" id="t-rr" aria-controls="p-rr" aria-selected="true"><svg class="ic"><use href="#i-grid"/></svg>Сетка</button>
         <button role="tab" id="t-train" aria-controls="p-train" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#i-train"/></svg>Итоги</button>
         <button role="tab" id="t-dash" aria-controls="p-dash" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#i-dash"/></svg>Дашборды</button>
         <button role="tab" id="t-club" aria-controls="p-club" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#i-club"/></svg>Клуб</button>
         <button role="tab" id="t-an" aria-controls="p-an" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#i-analysis"/></svg>Анализ</button>
+        <button role="tab" id="t-pay" aria-controls="p-pay" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#i-pay"/></svg>Оплата</button>
         <button role="tab" id="t-ch" aria-controls="p-ch" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#i-charts"/></svg>Графики</button>
         <button role="tab" id="t-st" aria-controls="p-st" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#i-stats"/></svg>Статистика</button>
         <button role="tab" id="t-pr" aria-controls="p-pr" aria-selected="false" tabindex="-1"><svg class="ic"><use href="#i-proto"/></svg>Протоколы</button>
@@ -158,21 +170,22 @@
 
       <div class="pane" role="tabpanel" id="p-rr" aria-labelledby="t-rr">
         <div class="pane-img">
-          <button class="shot" type="button" data-full="img/shots/rr-grid.webp" data-cap="Сетка 501 на тренировку"><img src="img/shots/rr-grid.webp" width="1600" height="886" alt="Сетка 501: пять туров, в каждом три пары игроков"></button>
+          <button class="shot" type="button" data-full="img/shots/rr-grid-full.webp" data-cap="Сетка 501 на тренировку"><img src="img/shots/rr-grid.webp" width="1600" height="886" alt="Сетка 501: туры и пары игроков"></button>
           <div class="pane-sub" data-sub>
-            <button type="button" aria-pressed="true" data-img="img/shots/rr-grid.webp" data-full="img/shots/rr-grid.webp" data-cap="Сетка 501 на тренировку">Утверждённая сетка</button>
+            <button type="button" aria-pressed="true" data-img="img/shots/rr-grid.webp" data-full="img/shots/rr-grid-full.webp" data-cap="Сетка 501 на тренировку">Утверждённая сетка</button>
             <button type="button" aria-pressed="false" data-img="img/shots/rr-variants.webp" data-full="img/shots/rr-variants-full.webp" data-cap="Выбор состава, формата и варианта сетки">Варианты сетки</button>
           </div>
         </div>
         <div class="pane-txt">
+          <span class="tier all">Все тарифы</span>
           <h3>Турнир 501 среди пришедших</h3>
           <p>Программа берёт тех, кто сегодня сыграл Большой раунд, и предлагает несколько вариантов кругового турнира.</p>
           <ul class="ticks">
             <li>Формат — до скольких побед в легах; варианты отличаются порядком туров и пар.</li>
-            <li>Подсказывает, кому придётся играть подряд.</li>
-            <li>Опоздавших можно добавить, ушедших — убрать, не пересобирая всю сетку.</li>
-            <li>Счёт вводит тренер или сам игрок в личном кабинете; программа умеет искать его на сайте дартс-базы.</li>
-            <li>Голосовые оповещения о результатах и следующих играх.</li>
+            <li>Опоздавших можно добавить, ушедших — убрать: их несыгранные игры отменятся.</li>
+            <li>Счёт вводит тренер или игрок в личном кабинете. С тарифа «Клуб» счёт и трансляции подтягиваются с сайта Дартс Базы сами.</li>
+            <li>У должников по оплате рядом с фамилией — значок ₽, виден только тренеру.</li>
+            <li>История сеток по дням со ссылками на игры.</li>
           </ul>
         </div>
       </div>
@@ -182,20 +195,21 @@
           <button class="shot" type="button" data-full="img/shots/train-full.webp" data-cap="Итоги тренировки — готовый текст для поста"><img src="img/shots/train.webp" width="1600" height="886" loading="lazy" alt="Итоги тренировки: текст с медалями Большого раунда и счётом игр 501"></button>
         </div>
         <div class="pane-txt">
+          <span class="tier">Старт</span>
           <h3>Итоги дня — готовым текстом</h3>
-          <p>Пост для группы клуба собирается сам: останется скопировать его или опубликовать.</p>
+          <p>Пост для группы клуба собирается сам: останется скопировать его.</p>
           <ul class="ticks">
             <li>Большой раунд — лучший результат каждого, первые три места с медалями.</li>
-            <li>501 — счёт каждой игры, лучший лег и крупные закрытия.</li>
-            <li>Сколько раз каждый набрал 180, эмодзи по желанию.</li>
-            <li>Публикация на стене сообщества ВКонтакте после предпросмотра.</li>
+            <li>501 — счёт каждой игры, лучший лег и закрытия от 100.</li>
+            <li>180, подходы больше 170 и лучшие результаты дня во всех играх.</li>
+            <li>С тарифа «Клуб» — публикация итогов и анонса следующей тренировки на стене сообщества ВКонтакте.</li>
           </ul>
         </div>
       </div>
 
       <div class="pane" role="tabpanel" id="p-dash" aria-labelledby="t-dash" hidden>
         <div class="pane-img">
-          <button class="shot" type="button" data-full="img/shots/dash-att.webp" data-cap="Посещаемость за год"><img src="img/shots/dash-att.webp" width="1600" height="886" loading="lazy" alt="Дашборд посещаемости за год: посещения, тренировочные дни, динамика по месяцам"></button>
+          <button class="shot" type="button" data-full="img/shots/dash-att.webp" data-cap="Посещаемость за год"><img src="img/shots/dash-att.webp" width="1600" height="886" loading="lazy" alt="Дашборд посещаемости за год"></button>
           <div class="pane-sub" data-sub>
             <button type="button" aria-pressed="true" data-img="img/shots/dash-att.webp" data-cap="Посещаемость за год">Посещаемость</button>
             <button type="button" aria-pressed="false" data-img="img/shots/dash-sig.webp" data-cap="Сигналы тренеру: кому нужно внимание">Сигналы тренеру</button>
@@ -207,6 +221,7 @@
           </div>
         </div>
         <div class="pane-txt">
+          <span class="tier">Старт</span>
           <h3>Дашборды для тренера и зала</h3>
           <p>Главное о клубе на одном экране — за месяц, год, выбранный период или всё время.</p>
           <ul class="ticks">
@@ -224,23 +239,24 @@
           <button class="shot" type="button" data-full="img/shots/club.webp" data-cap="Статистика клуба за год"><img src="img/shots/club.webp" width="1600" height="886" loading="lazy" alt="Статистика клуба за год: тренировочные дни, активные игроки, число игр каждого вида"></button>
         </div>
         <div class="pane-txt">
+          <span class="tier">Старт</span>
           <h3>Статистика клуба</h3>
-          <p>Сводка для отчёта перед руководством или федерацией.</p>
+          <p>Сводка для руководства, спонсоров или федерации.</p>
           <ul class="ticks">
             <li>Тренировочные дни, активные игроки, новички и число игр каждого вида.</li>
-            <li>Календарь активности и посещаемость по дням недели.</li>
-            <li>Топ-10 по каждому виду тренировок и рекорды клуба за всё время.</li>
-            <li>Печатная форма / PDF с выбором разделов и годовой отчёт.</li>
+            <li>Календарь активности, топ-10 по каждому виду тренировок и рекорды клуба.</li>
             <li>Отбор по категории — отдельно взрослые и ученики.</li>
+            <li>На тарифе «Академия» — печатная форма, PDF и годовой отчёт.</li>
           </ul>
         </div>
       </div>
 
       <div class="pane" role="tabpanel" id="p-an" aria-labelledby="t-an" hidden>
         <div class="pane-img">
-          <button class="shot" type="button" data-full="img/shots/analysis-full.webp" data-cap="Анализ игрока за год"><img src="img/shots/analysis.webp" width="1600" height="886" loading="lazy" alt="Анализ игрока: уровень, вывод тренера, ключевые показатели и сравнение с категорией"></button>
+          <button class="shot" type="button" data-full="img/shots/analysis-full.webp" data-cap="Анализ игрока за год"><img src="img/shots/analysis.webp" width="1600" height="886" loading="lazy" alt="Анализ игрока: уровень, вывод тренера, ключевые показатели"></button>
         </div>
         <div class="pane-txt">
+          <span class="tier">Академия</span>
           <h3>Анализ игрока</h3>
           <p>Разбор игрока одним экраном: уровень, краткий вывод и план работы.</p>
           <ul class="ticks">
@@ -249,6 +265,29 @@
             <li>Сильные и слабые стороны, предложения по развитию.</li>
             <li>Правила и пороги оценки настраиваются под ваш клуб.</li>
             <li>PDF для игрока и карточка для родителей.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pane" role="tabpanel" id="p-pay" aria-labelledby="t-pay" hidden>
+        <div class="pane-img">
+          <button class="shot" type="button" data-full="img/shots/pay-month-full.webp" data-cap="Оплата за месяц: кто оплатил и кто нет"><img src="img/shots/pay-month.webp" width="1600" height="886" loading="lazy" alt="Оплата за месяц: список игроков с абонементами, суммами и статусом оплаты"></button>
+          <div class="pane-sub" data-sub>
+            <button type="button" aria-pressed="true" data-img="img/shots/pay-month.webp" data-full="img/shots/pay-month-full.webp" data-cap="Оплата за месяц: кто оплатил и кто нет">За месяц</button>
+            <button type="button" aria-pressed="false" data-img="img/shots/pay-debts.webp" data-full="img/shots/pay-debts.webp" data-cap="Долги: все неоплаченные месяцы">Долги</button>
+            <button type="button" aria-pressed="false" data-img="img/shots/pay-income.webp" data-full="img/shots/pay-income-full.webp" data-cap="Доходы: начислено, поступило и долг по месяцам">Доходы</button>
+          </div>
+        </div>
+        <div class="pane-txt">
+          <span class="tier">Академия</span>
+          <h3>Оплата и абонементы</h3>
+          <p>Учёт оплаты занятий прямо в программе — без отдельной таблицы.</p>
+          <ul class="ticks">
+            <li>Тарифы клуба: абонемент на месяц или разовое занятие; новая цена — с выбранной даты.</li>
+            <li>Скидки и льготы, заморозка месяца на время болезни или каникул.</li>
+            <li>«За месяц» — кто оплатил и кто тренировался без абонемента; «Долги» — все неоплаченные месяцы.</li>
+            <li>Журнал оплат и доходы по месяцам с графиком, печать и выгрузка в Excel.</li>
+            <li>Напоминания должникам письмом; игрок видит свой абонемент в личном кабинете.</li>
           </ul>
         </div>
       </div>
@@ -263,6 +302,7 @@
           </div>
         </div>
         <div class="pane-txt">
+          <span class="tier">Старт</span>
           <h3>Прогресс на графиках</h3>
           <p>До шести игроков на одном графике, у каждого свой цвет.</p>
           <ul class="ticks">
@@ -279,6 +319,7 @@
           <button class="shot" type="button" data-full="img/shots/stats.webp" data-cap="Средние попадания по секторам"><img src="img/shots/stats.webp" width="1600" height="886" loading="lazy" alt="Таблица средних попаданий по секторам для всех игроков"></button>
         </div>
         <div class="pane-txt">
+          <span class="tier">Старт</span>
           <h3>Статистика по играм</h3>
           <p>Сводные таблицы по всем игрокам за выбранный период.</p>
           <ul class="ticks">
@@ -294,12 +335,13 @@
           <button class="shot" type="button" data-full="img/shots/proto.webp" data-cap="Протокол Большого раунда за день"><img src="img/shots/proto.webp" width="1600" height="886" loading="lazy" alt="Протокол Большого раунда: строка на каждого игрока, сектора 1–20 и Bull, итог"></button>
         </div>
         <div class="pane-txt">
+          <span class="tier">Академия</span>
           <h3>Протоколы вместо бумажных бланков</h3>
-          <p>Протокол выглядит как привычный бланк: строка на игрока, сектора 1–20 и Bull, «Итого».</p>
+          <p>Протокол выглядит как привычный бланк: строка на игрока, сектора или подходы, «Итого».</p>
           <ul class="ticks">
+            <li>Большой и Малый раунд, Набор очков, Сектор 20, Удвоения.</li>
             <li>За день, месяц, год или любой период; можно выбрать одного игрока.</li>
-            <li>Печать и PDF или файл Word — альбомный лист A4.</li>
-            <li>Подписи главного судьи и секретаря внизу протокола.</li>
+            <li>Печать и PDF или файл Word — альбомный лист A4, подписи судьи и секретаря.</li>
           </ul>
         </div>
       </div>
@@ -309,6 +351,7 @@
           <button class="shot" type="button" data-full="img/shots/archive.webp" data-cap="Архив игр"><img src="img/shots/archive.webp" width="1600" height="886" loading="lazy" alt="Архив результатов Большого раунда с фильтрами"></button>
         </div>
         <div class="pane-txt">
+          <span class="tier">Старт</span>
           <h3>Полный архив игр</h3>
           <p>Все игры по видам — с первого дня работы программы.</p>
           <ul class="ticks">
@@ -324,27 +367,30 @@
           <button class="shot" type="button" data-full="img/shots/players.webp" data-cap="Список игроков"><img src="img/shots/players.webp" width="1600" height="886" loading="lazy" alt="Список игроков с фото, категорией, почтой и числом игр"></button>
         </div>
         <div class="pane-txt">
+          <span class="tier">Старт</span>
           <h3>Игроки и категории</h3>
-          <p>Карточка игрока с фото, категорией, почтой и паролем кабинета.</p>
+          <p>Карточка игрока с фото, категорией, датой рождения, почтой и паролем кабинета.</p>
           <ul class="ticks">
             <li>Категории — например, взрослые, ученики первого и второго года.</li>
-            <li>Загрузка списка из CSV и фото пачкой из папки.</li>
-            <li>Выбывшие уходят в архив, их статистика сохраняется.</li>
-            <li>Объединение дублей, если один человек записан по-разному.</li>
+            <li>Краткие имена программа предлагает исправить на полные: Саша → Александр.</li>
+            <li>Фото пачкой из папки; с тарифа «Клуб» — загрузка списка из CSV.</li>
+            <li>Выбывшие уходят в архив, их статистика сохраняется. Дубли объединяются.</li>
+            <li>В тарифе «Старт» — до 20 игроков, в «Стандарте» и выше лимита нет.</li>
           </ul>
         </div>
       </div>
 
       <div class="pane" role="tabpanel" id="p-le" aria-labelledby="t-le" hidden>
         <div class="pane-img">
-          <button class="shot" type="button" data-full="img/shots/learn.webp" data-cap="Обучение прямо в программе"><img src="img/shots/learn.webp" width="1600" height="886" loading="lazy" alt="Раздел «Обучение»: список из 22 уроков и текущий урок"></button>
+          <button class="shot" type="button" data-full="img/shots/learn.webp" data-cap="Обучение прямо в программе"><img src="img/shots/learn.webp" width="1600" height="886" loading="lazy" alt="Раздел «Обучение»: список из 27 уроков и текущий урок"></button>
         </div>
         <div class="pane-txt">
-          <h3>Обучение внутри программы</h3>
-          <p>22 коротких урока — всего около часа. Каждый с картинками и кнопкой перехода в нужный раздел.</p>
+          <span class="tier all">Все тарифы</span>
+          <h3>Обучение и поддержка</h3>
+          <p>27 коротких уроков — всего около часа с небольшим. Каждый с картинками и кнопкой перехода в нужный раздел.</p>
           <ul class="ticks">
-            <li>От первого запуска и переноса данных до писем игрокам.</li>
-            <li>Отметки о пройденных уроках и шпаргалка по клавишам.</li>
+            <li>От первого запуска и переноса данных до оплаты и писем игрокам.</li>
+            <li>Вопрос или проблема — кнопка «?» в меню: заявка в поддержку уходит прямо из программы, с файлами и номером заявки.</li>
           </ul>
         </div>
       </div>
@@ -353,17 +399,17 @@
 </section>
 
 <!-- ============ Кабинет ============ -->
-<section class="alt" id="cabinet" aria-labelledby="h-cab">
+<section id="cabinet" aria-labelledby="h-cab">
   <div class="wrap">
-    <div class="sec-h"><svg class="ic"><use href="#i-players"/></svg><h2 id="h-cab">Личный кабинет игрока</h2></div>
+    <div class="sec-h"><svg class="ic"><use href="#i-players"/></svg><h2 id="h-cab">Личный кабинет игрока <span class="tier">Академия</span></h2></div>
     <div class="cab-grid">
       <div class="txt">
         <p class="sec-intro" style="margin-bottom:0">Каждый игрок видит свою статистику в смартфоне. Ничего устанавливать не нужно.</p>
         <ul class="ticks">
           <li>Игрок подключается к Wi‑Fi клуба, наводит камеру на QR-код с плаката, выбирает себя и вводит пароль из четырёх цифр.</li>
-          <li>«Сегодня» — сетка 501 и свои игры; после матча игрок нажимает «Игра завершена».</li>
-          <li>Профиль с рекордами, личные дашборды, статистика как в анализе тренера и графики прогресса.</li>
-          <li>В настройках — смена фото, почта и подписка на ежемесячное письмо.</li>
+          <li>«Сегодня» — сетка 501 со ссылками на игры; после матча игрок нажимает «Игра завершена».</li>
+          <li>Профиль с рекордами, абонементом и историей оплат, личные дашборды, статистика и графики.</li>
+          <li>Есть долг — вверху игрок видит, за что и сколько заплатить.</li>
           <li>Кабинет работает, пока на компьютере тренера открыта программа. Интернет не нужен.</li>
         </ul>
       </div>
@@ -378,17 +424,17 @@
 
     <div class="mail-grid">
       <button class="shot" type="button" data-full="img/shots/mail.webp" data-cap="Пример письма игроку за месяц" data-narrow>
-        <img src="img/shots/mail.webp" width="1000" height="1764" loading="lazy" alt="Письмо игроку: статистика за октябрь с изменениями к прошлому месяцу">
+        <img src="img/shots/mail.webp" width="1000" height="2651" loading="lazy" alt="Письмо игроку: статистика за месяц с изменениями к прошлому месяцу">
         <span class="zoom"><svg class="ic"><use href="#i-zoom"/></svg>Увеличить</span>
       </button>
       <div class="txt">
-        <h3><svg class="ic" style="width:30px;height:30px;vertical-align:-4px;margin-right:6px"><use href="#i-mail"/></svg>Письмо каждый месяц</h3>
-        <p>1-го числа программа готовит каждому игроку письмо за прошлый месяц и напоминает отправить их. Отправка — одной кнопкой через почту клуба (Яндекс, Mail.ru или Gmail).</p>
+        <h3><svg class="ic" style="width:30px;height:30px;vertical-align:-4px;margin-right:6px"><use href="#i-mail"/></svg>Письмо каждый месяц <span class="tier">Академия</span></h3>
+        <p>1-го числа программа готовит каждому игроку письмо за прошлый месяц. Отправка — одной кнопкой или автоматически через почту клуба (Яндекс, Mail.ru или Gmail).</p>
         <ul class="ticks">
           <li>Статистика за месяц по всем видам тренировок.</li>
           <li>Сравнение с прошлым месяцем: что выросло, что снизилось.</li>
           <li>Анализ тренера и место в рейтинге клуба.</li>
-          <li>Тему, приветствие и подпись можно поправить; журнал отправки сохраняется.</li>
+          <li>Напоминания об оплате должникам; журнал отправки сохраняется.</li>
         </ul>
       </div>
     </div>
@@ -396,16 +442,109 @@
 </section>
 
 <!-- ============ Данные ============ -->
-<section id="data" aria-labelledby="h-data">
+<section class="alt" id="data" aria-labelledby="h-data">
   <div class="wrap">
     <div class="sec-h"><svg class="ic"><use href="#i-settings"/></svg><h2 id="h-data">Данные остаются в клубе</h2></div>
     <div class="feats">
-      <article class="feat"><svg class="ic"><use href="#i-offline"/></svg><h3>Без сервера и подписки на облако</h3><p>Программа — один файл, который открывается в браузере Chrome или Edge. Данные хранятся на компьютере тренера.</p></article>
+      <article class="feat"><svg class="ic"><use href="#i-offline"/></svg><h3>Без сервера и облака</h3><p>Программа — один файл, который открывается в браузере Chrome или Edge. Данные хранятся на компьютере тренера.</p></article>
       <article class="feat"><svg class="ic"><use href="#i-backup"/></svg><h3>Резервные копии сами</h3><p>Раз в день копия сохраняется в выбранную папку: 7 ежедневных и 12 месячных. Папку можно положить в Яндекс Диск или OneDrive.</p></article>
-      <article class="feat"><svg class="ic"><use href="#i-import"/></svg><h3>Перенос старых данных</h3><p>Импорт из таблиц прежней программы (DBF), игроков — из CSV, закрытий — из Excel. Экспорт результатов за любой период.</p></article>
-      <article class="feat"><svg class="ic"><use href="#i-wifi"/></svg><h3>Сеть клуба</h3><p>Табло и личный кабинет работают по Wi‑Fi клуба через небольшой помощник, который один раз запускается на компьютере тренера.</p></article>
-      <article class="feat"><svg class="ic"><use href="#i-voice"/></svg><h3>Голос</h3><p>Озвучка сектора, набора, остатка и итогов. Голос и скорость выбираются в настройках.</p></article>
-      <article class="feat"><svg class="ic"><use href="#i-vk"/></svg><h3>Связь с внешним миром</h3><p>По желанию: публикация итогов во ВКонтакте, письма игрокам, счёт игр 501 и трансляции с сайта дартс-базы.</p></article>
+      <article class="feat"><svg class="ic"><use href="#i-import"/></svg><h3>Перенос старых данных</h3><p>Импорт из прежней программы (DBF), из Excel по шаблонам CSV, 180 и закрытий с сайта Дартс Базы. Экспорт за любой период.</p></article>
+      <article class="feat"><svg class="ic"><use href="#i-wifi"/></svg><h3>Служба Дартс-Центр</h3><p>Табло по сети, личный кабинет, почта и связь с сайтом работают через службу Дартс-Центр — её один раз устанавливают на компьютер тренера.</p></article>
+      <article class="feat"><svg class="ic"><use href="#i-voice"/></svg><h3>Голос</h3><p>Озвучка сектора, набора, остатка и итогов на компьютере тренера или прямо на табло. Голос и скорость выбираются в настройках.</p></article>
+      <article class="feat"><svg class="ic"><use href="#i-vk"/></svg><h3>ВКонтакте и Дартс База</h3><p>Публикация итогов и анонсов в сообществе клуба, трансляции и счёт игр с сайта Дартс Базы.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Тарифы ============ -->
+<section id="prices" aria-labelledby="h-prices">
+  <div class="wrap">
+    <div class="sec-h"><svg class="ic"><use href="#i-club"/></svg><h2 id="h-prices">Тарифы</h2></div>
+    <p class="sec-intro">Программа работает по ежемесячной подписке: оплатить можно на 1, 3, 6 или 12 месяцев. Каждый следующий тариф включает всё из предыдущих.</p>
+    <div class="plans">
+      <article class="plan">
+        <h3>Демо</h3>
+        <p class="who">Знакомство с программой</p>
+        <div class="sum">0 ₽</div>
+        <p class="what">Базовые функции с ограничениями: игры обрываются после 3 шагов, большинство разделов только для просмотра.</p>
+        <a class="btn" href="#contact" data-plan="Демо">Попробовать</a>
+      </article>
+      <article class="plan">
+        <h3>Старт</h3>
+        <p class="who">Небольшая группа, секция, частный тренер</p>
+        <div class="sum ask">Цена по запросу</div>
+        <p class="what">Все базовые функции, до 20 игроков в базе.</p>
+        <a class="btn" href="#contact" data-plan="Старт">Запросить цену</a>
+      </article>
+      <article class="plan">
+        <h3>Стандарт</h3>
+        <p class="who">Клуб с большим составом</p>
+        <div class="sum ask">Цена по запросу</div>
+        <p class="what">Все базовые функции без ограничения числа игроков.</p>
+        <a class="btn" href="#contact" data-plan="Стандарт">Запросить цену</a>
+      </article>
+      <article class="plan">
+        <h3>Клуб</h3>
+        <p class="who">Клуб с залом, турнирами и сообществом</p>
+        <div class="sum ask">Цена по запросу</div>
+        <p class="what">Стандарт + своё название и логотип, табло, голос, ВКонтакте, Дартс База, импорт.</p>
+        <a class="btn" href="#contact" data-plan="Клуб">Запросить цену</a>
+      </article>
+      <article class="plan">
+        <h3>Академия</h3>
+        <p class="who">Школа дартса, клуб с платными занятиями</p>
+        <div class="sum ask">Цена по запросу</div>
+        <p class="what">Клуб + протоколы, отчёт клуба, личный кабинет игрока, почтовые рассылки, оплата, анализ игрока.</p>
+        <a class="btn primary" href="#contact" data-plan="Академия">Запросить цену</a>
+      </article>
+    </div>
+
+    <details class="compare">
+      <summary>Сравнить все функции по тарифам</summary>
+      <div class="tbl-wrap" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Функция</th><th scope="col">Демо</th><th scope="col">Старт</th><th scope="col">Стандарт</th><th scope="col">Клуб</th><th scope="col">Академия</th></tr></thead>
+          <tbody>
+            <tr class="grp"><th colspan="6" scope="rowgroup">Базовые функции</th></tr>
+            <tr><th scope="row">Игроки: карточки, категории, фото, цели, архив</th><td class="y">✓</td><td>до 20</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Игры: Большой раунд, 501, Малый раунд, Сектор 20, Набор очков, Удвоения</th><td>3 шага</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Режим «Один экран»</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Архив, исправление и удаление игр</th><td>просмотр</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Статистика, графики, статистика клуба на экране</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Дашборды: посещаемость, закрытия, рекорды, 180</th><td>просмотр</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Итоги тренировки: текст, копирование</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Сетка 501: варианты, утверждение, ручной ввод счёта</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Лучшие закрытия (ручной ввод)</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Резервные копии, обучение, заявки в поддержку</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr class="grp"><th colspan="6" scope="rowgroup">Клуб</th></tr>
+            <tr><th scope="row">Своё название и логотип клуба</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Табло: в программе, отдельное окно, слайды</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Табло по сети: телевизор, приставка, планшет, телефон</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Голос: озвучка игр, оповещения сетки, «180 очков выбил…», голос на табло</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">ВКонтакте: итоги и анонс тренировки</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Дартс База: трансляции, счёт с сайта, статистика игр, 180 и закрытия</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Импорт: старая программа, CSV, сайт Дартс Базы, чужая резервная копия</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr class="grp"><th colspan="6" scope="rowgroup">Академия</th></tr>
+            <tr><th scope="row">Протоколы игр: печать, PDF, Word</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Печать отчёта клуба и годовой отчёт (PDF)</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Личный кабинет игрока в телефоне</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Почтовые рассылки игрокам</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Оплата: абонементы, долги, доходы, напоминания</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Анализ игрока: оценка, план тренировок</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="subs">
+      <h3>Как работает подписка</h3>
+      <ul class="ticks">
+        <li>После оплаты клуб получает лицензионный ключ. Он привязан к компьютеру тренера, в нём записаны тариф и дата окончания подписки.</li>
+        <li>За 7 дней до окончания программа напоминает о продлении. Продление начинается с даты окончания текущей подписки — оплаченные дни не теряются.</li>
+        <li>Когда подписка заканчивается, программа переходит в демо-режим. Данные клуба не удаляются и снова доступны после продления.</li>
+        <li>Тариф можно сменить в любой момент. Данные закрытых функций, например оплаты игроков, сохраняются и показываются снова, когда нужный тариф подключат опять.</li>
+        <li>Функции, которых нет в тарифе, видны в программе с замком 🔒. По щелчку — описание и кнопка «Запросить», она оформляет заявку на подключение.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -413,111 +552,56 @@
 <!-- ============ Как начать ============ -->
 <section class="alt" id="start" aria-labelledby="h-start">
   <div class="wrap">
-    <div class="sec-h"><svg class="ic"><use href="#i-learn"/></svg><h2 id="h-start">Как начать</h2></div>
+    <div class="sec-h"><svg class="ic"><use href="#i-learn"/></svg><h2 id="h-start">Как подключиться</h2></div>
     <ol class="steps">
       <li><b>Оставьте заявку</b><span>Расскажите о клубе — пришлём программу и ответим на вопросы.</span></li>
-      <li><b>Попробуйте демо-версию</b><span>Все разделы открыты для просмотра — можно оценить программу на своих данных.</span></li>
-      <li><b>Активируйте лицензию</b><span>Программа покажет ID компьютера — по нему вы получите серийный номер.</span></li>
-      <li><b>Перенесите игроков</b><span>Загрузите список из CSV или старой программы и пройдите встроенное обучение.</span></li>
+      <li><b>Запустите программу</b><span>Она откроется в демо-режиме — можно посмотреть все разделы.</span></li>
+      <li><b>Выберите тариф</b><span>«Настройки» → «Лицензия» → «Продлить / сменить тариф»: заявка заполнится сама, с ИД компьютера.</span></li>
+      <li><b>Активируйте ключ</b><span>После оплаты ключ придёт на e-mail — вставьте его в поле «Серийный номер».</span></li>
     </ol>
   </div>
 </section>
 
-<!-- ============ Цены ============ -->
-<section id="prices" aria-labelledby="h-prices">
-  <div class="wrap">
-    <div class="sec-h"><svg class="ic"><use href="#i-club"/></svg><h2 id="h-prices">Цены</h2></div>
-    <div class="prices">
-      <article class="price">
-        <h3>Демо-версия</h3>
-        <div class="sum">0 ₽</div>
-        <div class="per">без ограничения по времени</div>
-        <ul>
-          <li><svg class="ic"><use href="#i-check"/></svg>Все разделы для просмотра</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Сетку 501 можно формировать и вести</li>
-          <li class="no"><svg class="ic"><use href="#i-cross"/></svg>В играх вводятся только первые 3 шага</li>
-          <li class="no"><svg class="ic"><use href="#i-cross"/></svg>Печать и Word — с водяным знаком</li>
-          <li class="no"><svg class="ic"><use href="#i-cross"/></svg>Почта, ВКонтакте и сайт дартс-базы выключены</li>
-        </ul>
-        <a class="btn" href="#contact" data-plan="Демо-версия">Запросить демо</a>
-      </article>
-      <article class="price main">
-        <h3>Лицензия</h3>
-        <div class="sum">X XXX ₽</div>
-        <div class="per">на один компьютер</div>
-        <ul>
-          <li><svg class="ic"><use href="#i-check"/></svg>Все возможности программы</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Табло, трансляция и личный кабинет</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Письма игрокам и публикация во ВКонтакте</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Обновления: [условия]</li>
-        </ul>
-        <a class="btn primary" href="#contact" data-plan="Лицензия">Купить лицензию</a>
-      </article>
-      <article class="price">
-        <h3>Подключение под ключ</h3>
-        <div class="sum">X XXX ₽</div>
-        <div class="per">разово, вместе с лицензией</div>
-        <ul>
-          <li><svg class="ic"><use href="#i-check"/></svg>Перенос игроков и прежних результатов</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Настройка табло, кабинета и почты</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Обучение тренера</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Плакат с QR-кодом и пароли игроков</li>
-        </ul>
-        <a class="btn" href="#contact" data-plan="Подключение под ключ">Обсудить подключение</a>
-      </article>
-    </div>
-    <p class="note">Цены и условия уточняйте при заявке.</p>
-  </div>
-</section>
-
 <!-- ============ FAQ ============ -->
-<section class="alt" id="faq" aria-labelledby="h-faq">
+<section id="faq" aria-labelledby="h-faq">
   <div class="wrap">
     <div class="sec-h"><svg class="ic"><use href="#i-learn"/></svg><h2 id="h-faq">Вопросы</h2></div>
     <div class="faq">
-      <details><summary>Нужен ли интернет?</summary><p>Для тренировок, статистики, табло и личного кабинета — нет: всё работает на компьютере тренера и в сети клуба. Интернет нужен только для писем игрокам, публикации во ВКонтакте и данных с сайта дартс-базы.</p></details>
+      <details><summary>Нужен ли интернет?</summary><p>Для тренировок, статистики, табло и личного кабинета — нет: всё работает на компьютере тренера и в сети клуба. Интернет нужен для писем игрокам, публикации во ВКонтакте, данных с сайта Дартс Базы и заявок в поддержку.</p></details>
       <details><summary>Какой нужен компьютер?</summary><p>Компьютер или ноутбук с Windows и браузером Chrome или Microsoft Edge. Есть режим для небольших мониторов 1366×768 и 1440×900.</p></details>
-      <details><summary>Где хранятся данные и что будет, если компьютер сломается?</summary><p>Данные хранятся в браузере на компьютере тренера. Программа каждый день сама делает резервную копию в выбранную папку — положите её в облако, и восстановить данные можно будет на другом компьютере.</p></details>
-      <details><summary>Как вывести счёт на телевизор?</summary><p>Подключите телевизор к компьютеру как второй экран и откройте окно табло. Или включите трансляцию по сети — Smart TV, планшет или телефон откроют табло по адресу или QR-коду.</p></details>
-      <details><summary>Что нужно игрокам для личного кабинета?</summary><p>Смартфон с браузером и Wi‑Fi клуба. Игрок выбирает себя в списке и вводит пароль из четырёх цифр, который выдаёт тренер.</p></details>
-      <details><summary>Можно ли перенести данные из старой программы?</summary><p>Да. Программа загружает таблицы прежней программы (player.dbf, biground.dbf, game501.dbf, legs.dbf), список игроков из CSV и закрытия из файла Excel.</p></details>
-      <details><summary>Можно ли работать на двух компьютерах?</summary><p>Лицензия привязана к компьютеру. Данные переносятся между компьютерами через резервную копию.</p></details>
+      <details><summary>Где хранятся данные и что будет, если компьютер сломается?</summary><p>Данные хранятся в браузере на компьютере тренера. Программа каждый день сама делает резервную копию в выбранную папку — положите её в облако, и данные можно будет восстановить на другом компьютере.</p></details>
+      <details><summary>Что будет, когда подписка закончится?</summary><p>Программа перейдёт в демо-режим: игры обрываются после нескольких шагов, часть разделов — только для просмотра. Данные не удаляются и снова доступны после продления.</p></details>
+      <details><summary>Можно ли сменить тариф?</summary><p>Да, в любой момент. При переходе на более простой тариф данные закрытых функций сохраняются и появятся снова, когда нужный тариф подключат опять.</p></details>
+      <details><summary>Можно ли работать на двух компьютерах?</summary><p>Один ключ — один компьютер: ключ привязан к компьютеру тренера. Данные между компьютерами переносятся через резервную копию.</p></details>
+      <details><summary>Как вывести счёт на телевизор?</summary><p>Подключите телевизор к компьютеру как второй экран и откройте окно табло. Или включите трансляцию по сети — Smart TV, Android-приставка, планшет или телефон откроют табло по адресу или QR-коду. Табло — с тарифа «Клуб».</p></details>
+      <details><summary>Что нужно игрокам для личного кабинета?</summary><p>Смартфон с браузером и Wi‑Fi клуба. Игрок выбирает себя в списке и вводит пароль из четырёх цифр, который выдаёт тренер. Кабинет — в тарифе «Академия».</p></details>
+      <details><summary>Можно ли перенести данные из старой программы?</summary><p>Да. Программа загружает таблицы прежней программы (player.dbf, biground.dbf, game501.dbf, legs.dbf), результаты из Excel по шаблонам CSV, а 180 и закрытия — с сайта Дартс Базы.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ============ Контакты ============ -->
-<section id="contact" aria-labelledby="h-contact">
-  <div class="wrap">
+<!-- ============ Заявка ============ -->
+<section class="alt" id="contact" aria-labelledby="h-contact">
+  <div class="wrap narrow">
     <div class="sec-h"><svg class="ic"><use href="#i-call"/></svg><h2 id="h-contact">Оставить заявку</h2></div>
-    <p class="sec-intro">Расскажите о вашем клубе или секции — ответим и пришлём программу.</p>
-    <div class="contact">
-      <form class="form" id="lead" novalidate>
-        <label><span>Ваше имя <span class="req" aria-hidden="true">*</span></span><input name="name" autocomplete="name" required></label>
-        <label>Клуб или секция<input name="club" autocomplete="organization"></label>
-        <label><span>Электронная почта <span class="req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" inputmode="email" required></label>
-        <label>Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7"></label>
-        <label class="full">Игроков в клубе
-          <select name="size"><option value="">— выберите —</option><option>до 15</option><option>15–40</option><option>40–100</option><option>больше 100</option></select>
-        </label>
-        <label class="full">Что интересует
-          <select name="plan" id="plan"><option>Демо-версия</option><option>Лицензия</option><option>Подключение под ключ</option><option>Просто вопрос</option></select>
-        </label>
-        <label class="full">Комментарий<textarea name="msg" placeholder="Например: сколько тренеров, есть ли телевизор в зале, ведёте ли статистику сейчас"></textarea></label>
-        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <label class="full agree"><input type="checkbox" name="agree" required>Согласен на обработку персональных данных для ответа на заявку</label>
-        <div class="full"><button class="btn primary lg" type="submit">Отправить заявку</button></div>
-        <div class="form-msg" id="lead-msg" role="status" aria-live="polite"></div>
-      </form>
-      <div class="cards">
-        <!-- КОНТАКТЫ: замените заглушки на свои данные -->
-        <a class="cline" href="tel:+70000000000"><svg class="ic"><use href="#i-call"/></svg><span><small>Телефон</small><b>+7 (000) 000-00-00</b></span></a>
-        <a class="cline" href="mailto:darts-center@yandex.ru"><svg class="ic"><use href="#i-mail"/></svg><span><small>Почта</small><b>darts-center@yandex.ru</b></span></a>
-        <a class="cline" href="https://t.me/username" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg><span><small>Telegram</small><b>@username</b></span></a>
-        <a class="cline" href="https://vk.com/club" rel="noopener"><svg class="ic"><use href="#i-vk"/></svg><span><small>ВКонтакте</small><b>vk.com/club</b></span></a>
-        <div class="cline"><svg class="ic"><use href="#i-key"/></svg><span><small>Разработчик</small><b>[Имя или ИП, ИНН — заполнить]</b></span></div>
-      </div>
-    </div>
+    <p class="sec-intro">Расскажите о вашем клубе или секции — ответим на указанную почту и пришлём программу.</p>
+    <form class="form" id="lead" novalidate>
+      <label><span>Ваше имя <span class="req" aria-hidden="true">*</span></span><input name="name" autocomplete="name" required maxlength="120"></label>
+      <label>Клуб или секция<input name="club" autocomplete="organization" maxlength="150"></label>
+      <label><span>Электронная почта <span class="req" aria-hidden="true">*</span></span><input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120"></label>
+      <label>Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7" maxlength="40"></label>
+      <label>Игроков в клубе
+        <select name="size"><option value="">— выберите —</option><option>до 20</option><option>20–40</option><option>40–100</option><option>больше 100</option></select>
+      </label>
+      <label>Что интересует
+        <select name="plan" id="plan"><option value="Демо">Демо-версия</option><option value="Старт">Тариф «Старт»</option><option value="Стандарт">Тариф «Стандарт»</option><option value="Клуб">Тариф «Клуб»</option><option value="Академия">Тариф «Академия»</option><option value="Вопрос">Просто вопрос</option></select>
+      </label>
+      <label class="full">Комментарий<textarea name="message" maxlength="4000" placeholder="Например: сколько тренеров, есть ли телевизор в зале, ведёте ли статистику и оплату сейчас"></textarea></label>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="full agree"><input type="checkbox" name="agree" required>Согласен на обработку персональных данных для ответа на заявку</label>
+      <div class="full"><button class="btn primary lg" type="submit">Отправить заявку</button></div>
+      <div class="form-msg" id="lead-msg" role="status" aria-live="polite"></div>
+    </form>
   </div>
 </section>
 
@@ -525,9 +609,9 @@
 
 <footer>
   <div class="wrap foot">
-    <span class="brand"><img src="img/logo.svg" alt="" width="26" height="26">Дартс Клуб</span>
+    <span class="brand"><img src="img/logo.png" alt="" width="26" height="26">Дартс-Центр</span>
     <span>© 2026</span><span>Игроки и результаты на снимках вымышленные</span>
-    <nav aria-label="Нижнее меню"><a href="#modes">Тренировки</a><a href="#tour">Разделы</a><a href="#cabinet">Игрокам</a><a href="#prices">Цены</a><a href="#contact">Контакты</a></nav>
+    <nav aria-label="Нижнее меню"><a href="#video">Видео</a><a href="#modes">Тренировки</a><a href="#tour">Разделы</a><a href="#prices">Тарифы</a><a href="#contact">Заявка</a></nav>
   </div>
 </footer>
 
@@ -536,6 +620,6 @@
   <div class="lb-in"><img id="lb-img" alt=""><div class="lb-cap" id="lb-cap"></div></div>
 </dialog>
 
-<script src="js/site.js?v=5"></script>
+<script src="js/site.js?v=6"></script>
 </body>
 </html>
